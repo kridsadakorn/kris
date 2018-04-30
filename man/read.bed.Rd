@@ -33,7 +33,7 @@ PLINK.
 }
 \details{
 For more details about the binary PLINK format, please check
-\url{http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml}
+\url{http://zzz.bwh.harvard.edu/plink/binary.shtml}
 }
 \examples{
 

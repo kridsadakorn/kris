@@ -12,9 +12,6 @@
 #'
 #' @return The function returns an average Fst value between 2 specified groups.
 #'
-#' @details For more details about the binary PLINK format, please check
-#' \url{http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml}
-#'
 #' @references
 #' Bhatia, G., Patterson, N., Sankararaman, S., and Price, A.L. (2013).
 #' Estimating and interpreting FST: The impact of rare variants. Genome Res. 23,
@@ -97,9 +94,6 @@ fst.hudson <-function(X, idx.p1, idx.p2){
 #'
 #' @return The function returns a matrix of pairwise Fst values for all SNPs
 #' between 2 specified groups.
-#'
-#' @details For more details about the binary PLINK format, please check
-#' \url{http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml}
 #'
 #' @references
 #' Bhatia, G., Patterson, N., Sankararaman, S., and Price, A.L. (2013).

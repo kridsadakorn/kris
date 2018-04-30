@@ -23,10 +23,6 @@ The function returns an average Fst value between 2 specified groups.
 Fixation index (Fst) calculation was implemented using Hudson
 method as in Bhatia (2013) and Hudson (1992).
 }
-\details{
-For more details about the binary PLINK format, please check
-\url{http://pngu.mgh.harvard.edu/~purcell/plink/binary.shtml}
-}
 \examples{
 
 library(kris)
