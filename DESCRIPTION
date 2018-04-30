@@ -10,7 +10,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Imports: rARPACK,grDevices,graphics,stats,utils
-Suggests: testthat,roxygen2
+Suggests: devtools,covr,roxygen2,testthat
 BugReports: https://gitlab.com/kris.ccp/kris_rel/issues
 URL: https://gitlab.com/kris.ccp/kris_rel
 
