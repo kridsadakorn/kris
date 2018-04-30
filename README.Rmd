@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Summary
 
-The R package ```kris``` (**K**een and **R**eliable **I**nterface**S** for 
+The R package ```kris``` (**K**een and **R**eliable **I**nterface*S* for 
 bioinformatic analysis) is the package providing useful funcions which are 
 needed for bioinformatic analysis.
 
