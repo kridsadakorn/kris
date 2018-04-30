@@ -1,16 +1,16 @@
 Package: kris
-Title: Keen and Reliable Interface Subroutines for bioinformatic analysis
+Title: Keen and Reliable Interface Subroutines for Bioinformatic Analysis
 Version: 1.0.2
 Authors@R: c(person("Kridsadakorn", "Chaichoompu", email = "kridsadakorn.chaichoompu@gmail.com", role = c("aut", "cre")),person("Kristel", "Van Steen", role = "aut"),person("Fentaw", "Abegaz", role = "aut"),person("Sissades", "Tongsima", role = "aut"),person("Philip", "James Shaw", role = "aut"),person("Anavaj", "Sakuntabhai", role = "aut"),person("Luisa", "Pereira", role = "aut"))
-Description: The R package Kris (Keen and Reliable Interface Subroutines for bioinformatic analysis) is the package providing useful functions which are needed for bioinformatic analysis.
+Description: The R package Kris (Keen and Reliable Interface Subroutines for Bioinformatic Analysis) is the package providing useful functions which are needed for bioinformatic analysis.
 Depends: R (>= 3.4.3.0)
 License: GPL-2|GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
-Imports: rARPACK,grDevices,graphics,stats,utils
-Suggests: devtools,covr,roxygen2,testthat
+Imports: rARPACK,grDevices,graphics,stats,utils,roxygen2
+Suggests: devtools,testthat
 BugReports: https://gitlab.com/kris.ccp/kris_rel/issues
 URL: https://gitlab.com/kris.ccp/kris_rel
 
