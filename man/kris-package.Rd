@@ -31,6 +31,14 @@ Moreover, here is the list of example datasets in the R package \pkg{kris}:
 \item \code{\link{sample_labels}}
 }
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://gitlab.com/kris.ccp/kris_rel}
+  \item Report bugs at \url{https://gitlab.com/kris.ccp/kris_rel/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Kridsadakorn Chaichoompu \email{kridsadakorn.chaichoompu@gmail.com}
 
