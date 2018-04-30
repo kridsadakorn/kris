@@ -12,7 +12,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# kris 1.0.0.9000
+# kris 1.0.1
+
+## Updates
+
+* Fixed the help file for ```cal.pc.linear``` and  ```rubikclust```.
 
 ---
 
