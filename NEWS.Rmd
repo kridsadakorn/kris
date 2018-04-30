@@ -12,6 +12,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# kris 1.0.2
+
+## Updates
+
+* Fixed the help file for ```read.bed```, ```read.bed```, ```fst.each.snp.hudson``` and  ```fst.hudson```.
+
+---
+
 # kris 1.0.1
 
 ## Updates
