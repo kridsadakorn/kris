@@ -12,3 +12,6 @@ Roxygen: list(markdown = TRUE)
 Imports: rARPACK
 Suggests: testthat
 ImportFrom: grDevices,graphics,stats,utils
+BugReports: https://gitlab.com/kris.ccp/kris_rel/issues
+URL: https://gitlab.com/kris.ccp/kris_rel
+Materials: README, NEWS
