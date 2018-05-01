@@ -8,44 +8,14 @@ before_script:
   - export _R_CHECK_CRAN_INCOMING_=FALSE
   - export _R_CHECK_FORCE_SUGGESTS_=TRUE
 
-r-base:
-  stage: test
-  image: rocker/rstudio-stable:latest
-  script:
-    - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
-    - Rscript -e 'devtools::install_dev_deps()'
-    - Rscript -e 'devtools::check()'
-  tags:
-    - docker
-
-r-devel:
-  stage: test
-  image: rocker/rstudio-stable:devel
-  script:
-    - RDscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
-    - RDscript -e 'devtools::install_dev_deps()'
-    - RDscript -e 'devtools::check()'
-  tags:
-    - docker
-
-r-oldrel:
-  stage: test
-  image: rocker/rstudio-stable:3
-  script:
-    - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
-    - Rscript -e 'devtools::install_dev_deps()'
-    - Rscript -e 'devtools::check()'
-  tags:
-    - docker
-  allow_failure: true
-
-r-packaging:
+r-release:
   stage: test
   image: methodsconsultants/r-packaging:latest
   script:
-    - R CMD build . --no-build-vignettes --no-manual
+    - Rscript -e 'install.packages(c("rARPACK"))'
+    - R CMD build .
     - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
-    - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual --as-cran
+    - R CMD check "${PKG_FILE_NAME}" --as-cran
   tags:
     - docker
 
