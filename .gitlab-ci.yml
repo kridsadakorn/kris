@@ -43,9 +43,9 @@ r-packaging:
   stage: test
   image: methodsconsultants/r-packaging:latest
   script:
-    - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
-    - Rscript -e 'devtools::install_dev_deps()'
-    - Rscript -e 'devtools::check()'
+    - R CMD build . --no-build-vignettes --no-manual
+    - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
+    - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual --as-cran
   tags:
     - docker
 
