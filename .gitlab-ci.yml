@@ -10,7 +10,7 @@ before_script:
 
 r-base:
   stage: test
-  image: r-base:latest
+  image: rocker/rstudio-stable:latest
   script:
     - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
     - Rscript -e 'devtools::install_dev_deps()'
@@ -20,7 +20,7 @@ r-base:
 
 r-devel:
   stage: test
-  image: rocker/drd:latest
+  image: rocker/rstudio-stable:devel
   script:
     - RDscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
     - RDscript -e 'devtools::install_dev_deps()'
@@ -30,7 +30,7 @@ r-devel:
 
 r-oldrel:
   stage: test
-  image: r-base:3.2.5
+  image: rocker/rstudio-stable:3
   script:
     - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
     - Rscript -e 'devtools::install_dev_deps()'
@@ -38,3 +38,14 @@ r-oldrel:
   tags:
     - docker
   allow_failure: true
+
+r-packaging:
+  stage: test
+  image: methodsconsultants/r-packaging:latest
+  script:
+    - Rscript -e 'install.packages(c("devtools", "roxygen2", "rARPACK"))'
+    - Rscript -e 'devtools::install_dev_deps()'
+    - Rscript -e 'devtools::check()'
+  tags:
+    - docker
+
