@@ -3,12 +3,11 @@ variables:
 
 r-release:
   stage: test
-  image: methodsconsultants/r-packaging:latest
+  image: rocker/tidyverse:latest
   script:
-    - Rscript -e 'install.packages(c("rARPACK"))'
-    - R CMD build .
-    - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
-    - R CMD check "${PKG_FILE_NAME}" --as-cran
+    - Rscript -e 'install.packages(c("devtools","testthat","roxygen2","rARPACK"))'
+    - Rscript -e 'devtools::install_dev_deps()'
+    - Rscript -e 'devtools::check()'
   tags:
     - docker
 
