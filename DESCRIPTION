@@ -1,7 +1,7 @@
 Package: kris
 Title: Keen and Reliable Interface Subroutines for Bioinformatic Analysis
 Version: 1.0.2
-Authors@R: c(person("Kridsadakorn", "Chaichoompu", email = "kridsadakorn.chaichoompu@gmail.com", role = c("aut", "cre")),person("Kristel", "Van Steen", role = "aut"),person("Fentaw", "Abegaz", role = "aut"),person("Sissades", "Tongsima", role = "aut"),person("Philip", "James Shaw", role = "aut"),person("Anavaj", "Sakuntabhai", role = "aut"),person("Luisa", "Pereira", role = "aut"))
+Authors@R: c(person("Kridsadakorn", "Chaichoompu", email = "kridsadakorn.chaichoompu at gmail.com", role = c("aut", "cre")),person("Kristel", "Van Steen", role = "aut"),person("Fentaw", "Abegaz", role = "aut"),person("Sissades", "Tongsima", role = "aut"),person("Philip", "James Shaw", role = "aut"),person("Anavaj", "Sakuntabhai", role = "aut"),person("Luisa", "Pereira", role = "aut"))
 Description: The R package kris (Keen and Reliable Interface Subroutines for Bioinformatic Analysis) is the package providing useful functions which are needed for bioinformatic analysis.
 Depends: R (>= 3.2.4.0)
 License: GPL-2|GPL-3
