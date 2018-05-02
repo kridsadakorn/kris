@@ -5,12 +5,27 @@ date: "27/04/2018"
 output:
   html_document:
     keep_md: yes
-  pdf_document: default
+    toc: yes
+  pdf_document: 
+    number_sections: yes
+    toc: yes
 ---
 
 
 
-# kris 1.0.0.9000
+# kris 1.0.2
+
+## Updates
+
+* Fixed the help file for ```read.bed```, ```read.bed```, ```fst.each.snp.hudson``` and  ```fst.hudson```.
+
+---
+
+# kris 1.0.1
+
+## Updates
+
+* Fixed the help file for ```cal.pc.linear``` and  ```rubikclust```.
 
 ---
 

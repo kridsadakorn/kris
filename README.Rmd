@@ -3,9 +3,12 @@ title: "README"
 author: "Kridsadakorn Chaichoompu"
 date: "27/04/2018"
 output:
-  pdf_document: default
   html_document:
     keep_md: yes
+    toc: yes
+  pdf_document: 
+    number_sections: yes
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}

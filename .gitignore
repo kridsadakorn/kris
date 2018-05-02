@@ -6,3 +6,7 @@
 .Rbuildignore
 packrat/lib*/
 packrat/src/
+README.pdf
+README.html
+NEWS.pdf
+NEWS.html
