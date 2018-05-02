@@ -5,7 +5,10 @@ date: "27/04/2018"
 output:
   html_document:
     keep_md: yes
-  pdf_document: default
+    toc: yes
+  pdf_document: 
+    number_sections: yes
+    toc: yes
 ---
 
 
@@ -14,8 +17,8 @@ output:
 
 ## Summary
 
-The R package ```kris``` (**K**een and **R**eliable **I**nterface**S** for 
-bioinformatic analysis) is the package providing useful funcions which are 
+The R package ```kris``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
+bioinformatic analysis) is the package providing useful functions which are 
 needed for bioinformatic analysis.
 
 The R package ```kris``` requires the package ```rARPACK```.
@@ -45,7 +48,7 @@ Install the released version of ```kris``` from CRAN:
 install.packages("kris")
 ```
 
-## Problems in building the package
+## Problems in checking the package as CRAN
 
 ### Error of Roxygen2 in building RD files
 
@@ -61,6 +64,20 @@ Tools... > use devtools package functions if available_) or run
 
 When facing error for ```testthat```, try to update the package ```testthat``` and add 
 ```Suggests: testthat``` in _DESCRIPTION_ file.
+
+### Submit package to CRAN
+
+Check the submission using ```R CMD check --as-cran``` and a current version of 
+r-devel, as mandated by the CRAN Repository Policy. (You could do so using the 
+win-builder service at http://win-builder.r-project.org)
+
+### Error on checking DESCRIPTION meta-information in Linux
+
+Edit ~/.profile, ~/.bash_profile or ~/.bashrc, then add
+
+export LANG=en_US.UTF-8
+
+export LC_ALL=en_US.UTF-8
 
 ## CONTRIBUTOR CODE OF CONDUCT
 
