@@ -46,7 +46,7 @@ Install the released version of ```kris``` from CRAN:
 install.packages("kris")
 ```
 
-## Problems in building the package
+## Problems in checking the package as CRAN
 
 ### Error of Roxygen2 in building RD files
 
