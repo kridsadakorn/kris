@@ -13,7 +13,7 @@ output:
 
 
 
-# kris 1.0.2
+# KRIS 1.0.2
 
 ## Updates
 
@@ -21,7 +21,7 @@ output:
 
 ---
 
-# kris 1.0.1
+# KRIS 1.0.1
 
 ## Updates
 
@@ -29,7 +29,7 @@ output:
 
 ---
 
-# kris 1.0.0
+# KRIS 1.0.0
 
 ## Initial functions
 

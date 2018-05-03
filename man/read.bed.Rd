@@ -37,12 +37,11 @@ For more details about the binary PLINK format, please check
 }
 \examples{
 
-library(kris)
 
 #Use the example files embedded in the package.
-bed <- system.file("extdata", "example_SNP.bed", package="kris")
-bim <- system.file("extdata", "example_SNP.bim", package="kris")
-fam <- system.file("extdata", "example_SNP.fam", package="kris")
+bed <- system.file("extdata", "example_SNP.bed", package="KRIS")
+bim <- system.file("extdata", "example_SNP.bim", package="KRIS")
+fam <- system.file("extdata", "example_SNP.fam", package="KRIS")
 snp <- read.bed(bed, bim, fam )
 
 #Check the objects inside 'snp'

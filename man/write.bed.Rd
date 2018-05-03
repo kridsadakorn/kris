@@ -33,7 +33,6 @@ For more details about the binary PLINK format, please check
 }
 \examples{
 
-library(kris)
 
 #Load example data
 data(example_SNP)

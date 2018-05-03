@@ -7,7 +7,7 @@ r-release:
   script:
     - Rscript -e 'install.packages(c("devtools","testthat","roxygen2","rARPACK"))'
     - Rscript -e 'devtools::install_dev_deps()'
-    - Rscript -e 'devtools::check()'
+    - Rscript -e 'devtools::check(args = c('--as-cran'))'
   tags:
     - docker
 

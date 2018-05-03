@@ -13,17 +13,17 @@ output:
 
 
 
-# R Package kris
+# R Package KRIS
 
 ## Summary
 
-The R package ```kris``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
+The R package ```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
 bioinformatic analysis) is the package providing useful functions which are 
 needed for bioinformatic analysis.
 
-The R package ```kris``` requires the package ```rARPACK```.
+The R package ```KRIS``` requires the package ```rARPACK```.
 
-Here is the list of functions in the R package ```kris```:
+Here is the list of functions in the R package ```KRIS```:
 
 * ```cal.pc.linear```
 * ```fst.each.snp.hudson```
@@ -34,18 +34,18 @@ Here is the list of functions in the R package ```kris```:
 * ```write.bed```
 * ```xxt```
 
-Moreover, here is the list of example datasets in the R package ```kris```:
+Moreover, here is the list of example datasets in the R package ```KRIS```:
 
 * ```simsnp```
 * ```sample_labels```
 
 ## Installation
 
-Install the released version of ```kris``` from CRAN:
+Install the released version of ```KRIS``` from CRAN:
 
 
 ```r
-install.packages("kris")
+install.packages("KRIS")
 ```
 
 ## Problems in checking the package as CRAN

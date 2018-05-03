@@ -25,7 +25,6 @@ method as in Bhatia (2013) and Hudson (1992).
 }
 \examples{
 
-library(kris)
 
 #Load simulated dataset
 data(example_SNP)
