@@ -4,7 +4,7 @@ note <- sprintf("R package version %s", meta$Version)
 citHeader("To cite KRIS in publications use:")
 
 citEntry(entry = "Manual",
-  title        = "KRIS: Keen and Reliable Interface Subroutines for Bioinformatics Analysis",
+  title        = "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis",
   author       = personList(person("Kridsadakorn", "Chaichoompu"),
   person("Fentaw", "Abegaz"),
   person("Sissades", "Tongsima"),
@@ -19,7 +19,7 @@ citEntry(entry = "Manual",
 
   textVersion  =
   paste0("Kridsadakorn Chaichoompu, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira, and Kristel Van Steen (",year,"). ",
-        "KRIS: Keen and Reliable Interface Subroutines for Bioinformatics Analysis. ",
+        "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis. ",
         note,
         ". URL: https://gitlab.com/kris.ccp/kris_rel")
 )
