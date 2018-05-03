@@ -9,23 +9,16 @@
 
 ## R CMD check results for Scientific Linux
 
-0 errors | 0 warnings | 4 notes
+0 errors | 0 warnings | 2 notes
 
-* checking CRAN incoming feasibility ... Maintainer: ‘Kridsadakorn Chaichoompu 
-<kridsadakorn.chaichoompu@gmail.com>’ is New submission
 * checking installed package size ... the installed size is 20.1Mb
-* checking top-level files ... Files ‘README.md’ or ‘NEWS.md’ cannot be checked 
-without ‘pandoc’ being installed.
-* checking examples ... Examples with CPU or elapsed time > 5s (cal.pc.linear, 
-rubikclust, and read.bed)
+* checking examples ... Examples with CPU or elapsed time > 5s (rubikclust and read.bed)
 
 ## R CMD check results for win-builder
 
-0 errors | 0 warnings | 3 notes
+0 errors | 0 warnings | 1 notes
 
 ### NOTES:
 * Possibly mis-spelled words in DESCRIPTION: Bioinformatic and bioinformatic. 
 Note that, according to the Oxford dictionary "bioinformatic" does exist as the adjective, for 
-example, bioinformatic analysis or bioinformatic tools.
-* running examples for arch 'i386' ... [37s]. Examples with CPU or elapsed time > 10s (cal.pc.linear)
-* running examples for arch 'x64' ... [34s]. Examples with CPU or elapsed time > 10sn (cal.pc.linear)
+example, bioinformatic analysis or bioinformatic tools. Ref: https://en.oxforddictionaries.com/definition/bioinformatic
