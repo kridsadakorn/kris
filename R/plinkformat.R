@@ -31,12 +31,11 @@
 #'
 #' @examples
 #'
-#' library(kris)
 #'
 #' #Use the example files embedded in the package.
-#' bed <- system.file("extdata", "example_SNP.bed", package="kris")
-#' bim <- system.file("extdata", "example_SNP.bim", package="kris")
-#' fam <- system.file("extdata", "example_SNP.fam", package="kris")
+#' bed <- system.file("extdata", "example_SNP.bed", package="KRIS")
+#' bim <- system.file("extdata", "example_SNP.bim", package="KRIS")
+#' fam <- system.file("extdata", "example_SNP.fam", package="KRIS")
 #' snp <- read.bed(bed, bim, fam )
 #'
 #' #Check the objects inside 'snp'
@@ -167,7 +166,6 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
 #'
 #' @examples
 #'
-#' library(kris)
 #'
 #' #Load example data
 #' data(example_SNP)

@@ -27,7 +27,6 @@
 #'
 #' @examples
 #'
-#' library(kris)
 #'
 #' #Load simulated dataset
 #' data(example_SNP)
@@ -109,7 +108,6 @@ fst.hudson <-function(X, idx.p1, idx.p2){
 #'
 #' @examples
 #'
-#' library(kris)
 #'
 #' #Load simulated dataset
 #' data(example_SNP)

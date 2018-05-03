@@ -1,7 +1,6 @@
 context("Plotting")
 
 test_that("plot 3 views",{
-  library(kris)
 
   data(example_SNP)
 

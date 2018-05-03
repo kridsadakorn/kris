@@ -14,7 +14,6 @@
 #'
 #' @examples
 #'
-#' library(kris)
 #'
 #' #Use the example files embedded in the package.
 #' X <-matrix(runif(100), ncol=20)

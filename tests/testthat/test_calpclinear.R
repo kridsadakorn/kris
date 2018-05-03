@@ -1,7 +1,6 @@
 context("Linear PCA for SNPs")
 
 test_that("calculate linear PCA",{
-  library(kris)
 
   data(example_SNP)
 

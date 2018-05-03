@@ -30,8 +30,6 @@
 #'
 #' @examples
 #'
-#' library(kris)
-#'
 #' #Load simulated dataset
 #' data(example_SNP)
 #'

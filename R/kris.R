@@ -1,12 +1,12 @@
 #' Keen and Reliable Interface Subroutines for bioinformatic analysis
 #'
-#' The R package Kris (Keen and Reliable InterfaceS for bioinformatic
+#' The R package KRIS (Keen and Reliable InterfaceS for bioinformatic
 #' analysis) is the package providing useful funcions which are needed for
 #' bioinformatic analysis.
 #'
-#' The R package \pkg{kris} requires the package \pkg{rARPACK}.
+#' The R package \pkg{KRIS} requires the package \pkg{rARPACK}.
 #'
-#' Here is the list of functions in the R package \pkg{kris}:
+#' Here is the list of functions in the R package \pkg{KRIS}:
 #' \itemize{
 #' \item \code{\link{cal.pc.linear}}
 #' \item \code{\link{fst.each.snp.hudson}}
@@ -18,7 +18,7 @@
 #' \item \code{\link{xxt}}
 #' }
 #'
-#' Moreover, here is the list of example datasets in the R package \pkg{kris}:
+#' Moreover, here is the list of example datasets in the R package \pkg{KRIS}:
 #' \itemize{
 #' \item \code{\link{simsnp}}
 #' \item \code{\link{sample_labels}}

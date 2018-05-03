@@ -31,8 +31,6 @@ first three columns are used; the other columns are ignored.
 }
 \examples{
 
-library(kris)
-
 #Load simulated dataset
 data(example_SNP)
 

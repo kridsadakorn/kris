@@ -1,7 +1,6 @@
 context("Fst Hudson each SNP")
 
 test_that("calculate Fst Hudson",{
-  library(kris)
 
   data(example_SNP)
 

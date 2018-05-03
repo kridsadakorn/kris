@@ -1,7 +1,6 @@
 context("Write PLINK format")
 
 test_that("Write BED file",{
-  library(kris)
 
   data(example_SNP)
 
