@@ -15,11 +15,11 @@ citEntry(entry = "Manual",
 ),
   year         = year,
   note         = note,
-  url          = "http://CRAN.R-project.org/package=KRIS",
+  url          = "https://gitlab.com/kris.ccp/kris_rel",
 
   textVersion  =
   paste0("Kridsadakorn Chaichoompu, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira, and Kristel Van Steen (",year,"). ",
         "KRIS: Keen and Reliable Interface Subroutines for Bioinformatics Analysis. ",
         note,
-        ". URL: http://CRAN.R-project.org/package=KRIS.")
+        ". URL: https://gitlab.com/kris.ccp/kris_rel")
 )
