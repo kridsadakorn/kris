@@ -15,6 +15,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# KRIS 1.0.4
+
+## Updates
+
+* Changed URL in the CITATION file from Gitlab to CRAN
+
+---
 
 # KRIS 1.0.3
 
