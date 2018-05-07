@@ -1,7 +1,6 @@
-#' A function for unsupervised clustering to detect rough structures and
-#' outliers.
+#' Unsupervised clustering to detect rough structures and outliers.
 #'
-#' @description The function operates on a Nx3 matrix, where N is the number of
+#' @description Handle and operate on Nx3 matrix, where N is the number of
 #' samples and data are collected on 3 variables.
 #'
 #' @param X A data matrix for which rows represent samples and the 3 columns
@@ -20,7 +19,7 @@
 #' @export
 #'
 #' @examples
-#'
+#' \donttest{
 #' #Load simulated dataset
 #' data(example_SNP)
 #'
@@ -49,6 +48,7 @@
 #' #Check the plot, highlight the points according to the clustering result
 #' mylabels <- paste0("group", as.factor(groups))
 #' plot3views( PCs$PC, labels = mylabels)
+#' }
 
 
 rubikclust <- function(X, min.space = 0.4, rotation = TRUE){

@@ -20,7 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Updates
 
-* Update URLs in DESCRIPTION file
+* Updated URLs and added details of package in the DESCRIPTION file
+* Updated manual of all functions according from CRAN's comments
 
 ---
 

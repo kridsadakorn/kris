@@ -6,9 +6,13 @@
 \alias{KRIS-package}
 \title{Keen and Reliable Interface Subroutines for bioinformatic analysis}
 \description{
-The R package KRIS (Keen and Reliable InterfaceS for bioinformatic
-analysis) is the package providing useful funcions which are needed for
-bioinformatic analysis.
+Provides useful functions which are needed for bioinformatic analysis such as
+calculating linear principal components from numeric data and
+Single-nucleotide polymorphism (SNP) dataset, calculating fixation index
+(Fst) using Hudson method, creating scatter plots in 3 views, handling with
+PLINK binary file format, detecting rough structures and outliers using
+unsupervised clustering, and calculating matrix multiplication in the faster
+way for big data.
 }
 \details{
 The R package \pkg{KRIS} requires the package \pkg{rARPACK}.
@@ -34,8 +38,8 @@ Moreover, here is the list of example datasets in the R package \pkg{KRIS}:
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://gitlab.com/kris.ccp/kris_rel}
-  \item Report bugs at \url{https://gitlab.com/kris.ccp/kris_rel/issues}
+  \item \url{https://gitlab.com/kris.ccp/kris}
+  \item Report bugs at \url{https://gitlab.com/kris.ccp/kris/issues}
 }
 
 }

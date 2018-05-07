@@ -2,7 +2,8 @@
 % Please edit documentation in R/principal.component.R
 \name{cal.pc.linear}
 \alias{cal.pc.linear}
-\title{A function for linear principal component analysis (PCA)}
+\title{Calculate linear principal component analysis (PCA) from numeric data and
+Single-nucleotide polymorphism (SNP) dataset}
 \usage{
 cal.pc.linear(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
   XXT = TRUE)
@@ -37,51 +38,50 @@ represent PCs.
 }
 }
 \description{
-The function is able to handle 2 types of data; linear and SNP
-dataset in additive coding (0, 1, and 2).
+Available for two types of data; numeric data and
+Single-nucleotide polymorphism (SNP) dataset in additive coding (0, 1, and 2).
 }
 \examples{
 
-## Not run:
-
 #Load simulated dataset
-# data(example_SNP)
+\donttest{
+data(example_SNP)
 
 #Using default parameters
-# PCs <- cal.pc.linear(simsnp$snp)
-# summary(PCs)
+PCs <- cal.pc.linear(simsnp$snp)
+summary(PCs)
 
 #Preview $PC
-# print(PCs$PC[1:5,1:3])
+print(PCs$PC[1:5,1:3])
 
 #Preview $evalue
-# print(PCs$evalue[1:3])
+print(PCs$evalue[1:3])
 
-# plot3views(PCs$PC[,1:3], sample_labels)
+plot3views(PCs$PC[,1:3], sample_labels)
 
 #Calculate PCs without PC scores
 
-# PCs <- cal.pc.linear(simsnp$snp, PCscore = FALSE)
-# summary(PCs)
+PCs <- cal.pc.linear(simsnp$snp, PCscore = FALSE)
+summary(PCs)
 
 #Preview $PC
-# print(PCs$PC[1:5,1:3])
+print(PCs$PC[1:5,1:3])
 
 #Preview $evalue
-# print(PCs$evalue[1:3])
+print(PCs$evalue[1:3])
 
-# plot3views(PCs$PC[,1:3], sample_labels)
+plot3views(PCs$PC[,1:3], sample_labels)
 
 #Calculate the top 3 PCs
-# PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
-# summary(PCs)
+PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
+summary(PCs)
 
 #Preview $PC
-# print(PCs$PC[1:5,1:3])
+print(PCs$PC[1:5,1:3])
 
 #Preview $evalue
-# print(PCs$evalue[1:3])
+print(PCs$evalue[1:3])
 
-# plot3views(PCs$PC[,1:3], sample_labels)
-
+plot3views(PCs$PC[,1:3], sample_labels)
+}
 }

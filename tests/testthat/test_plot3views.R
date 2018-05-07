@@ -8,6 +8,6 @@ test_that("plot 3 views",{
   res <- plot3views( PCs$PC, sample_labels)
 
   expect_equal(res, NULL)
-  file1 <- file.path(getwd(),"Rplots.pdf")
+  file1 <- file.path(tempdir(),"Rplots.pdf")
   file.remove(file1)
 })

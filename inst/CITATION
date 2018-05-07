@@ -5,13 +5,14 @@ citHeader("To cite KRIS in publications use:")
 
 citEntry(entry = "Manual",
   title        = "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis",
-  author       = personList(person("Kridsadakorn", "Chaichoompu"),
-  person("Fentaw", "Abegaz"),
-  person("Sissades", "Tongsima"),
-  person("Philip", family = "Shaw", middle = "James"),
-  person("Anavaj", "Sakuntabhai"),
-  person("Luisa", "Pereira"),
-  person("Kristel", family='Van Steen')
+  author       = personList(
+  person(given = "Kridsadakorn", family = "Chaichoompu"),
+  person(given = "Fentaw", family = "Abegaz"),
+  person(given = "Sissades", family = "Tongsima"),
+  person(given = "Philip", family = "James Shaw"),
+  person(given = "Anavaj", family = "Sakuntabhai"),
+  person(given = "Luisa", family = "Pereira"),
+  person(given = "Kristel", family = 'Van Steen')
 ),
   year         = year,
   note         = note,

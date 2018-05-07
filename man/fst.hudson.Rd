@@ -2,7 +2,8 @@
 % Please edit documentation in R/fst.R
 \name{fst.hudson}
 \alias{fst.hudson}
-\title{A function for average fixation index (Fst) calculation between two groups.}
+\title{Calculate the average fixation index (Fst) between two groups of individuals
+from Single-nucleotide polymorphism (SNP)}
 \usage{
 fst.hudson(X, idx.p1, idx.p2)
 }
