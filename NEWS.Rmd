@@ -15,6 +15,15 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+# KRIS 1.0.3
+
+## Updates
+
+* Update URLs in DESCRIPTION file
+
+---
+
 # KRIS 1.0.2
 
 ## Updates
@@ -31,7 +40,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---
 
-# KRIS 1.0.0
+# KRIS 1.0.0.0
 
 ## Initial functions
 
