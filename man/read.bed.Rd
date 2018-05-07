@@ -26,8 +26,8 @@ and \code{$ind.info}.
 }
 }
 \description{
-This function requires the complete set of 3 files in the binary
-PLINK format. This includes BED file, BIM file and BAM file. For more
+Require the complete set of 3 files in the binary
+PLINK format. It includes BED file, BIM file and BAM file. For more
 information about the binary PLINK format, please check in the manual of
 PLINK.
 }
@@ -37,7 +37,7 @@ For more details about the binary PLINK format, please check
 }
 \examples{
 
-
+\donttest{
 #Use the example files embedded in the package.
 bed <- system.file("extdata", "example_SNP.bed", package="KRIS")
 bim <- system.file("extdata", "example_SNP.bim", package="KRIS")
@@ -55,7 +55,7 @@ head(snp$snp.info)
 
 #Preview $ind.info
 head(snp$ind.info)
-
+}
 }
 \seealso{
 \code{\link{write.bed}}

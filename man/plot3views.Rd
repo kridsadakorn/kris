@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.3views.R
 \name{plot3views}
 \alias{plot3views}
-\title{A function to create scatter plots in three views.}
+\title{Create scatter plots in three views.}
 \usage{
 plot3views(X, labels, col.pat.table = NA, only.row = NA)
 }
@@ -12,7 +12,7 @@ data. If there are more than 3 columns in X, only the first 3 columns will be
 used.}
 
 \item{labels}{A vector containing row labels of X for display. All vector
-elements should be of type "character" (as.character). The length of this
+elements should be of type "character" (as.character). The length of
 vector equals the number of rows in X.}
 
 \item{col.pat.table}{A data.frame that associates colors and patterns to row
@@ -24,8 +24,8 @@ unique labels (column 1) and associated patterns (column 2) and colors
 selected to be plotted. Default = NA.}
 }
 \description{
-The function visualizes data in X-Y plane, X-Z plane, and Y-Z
-plane; an input object (matrix or data.frame) must contain at least 3
+Visualize data in X-Y plane, X-Z plane, and Y-Z
+plane. The input object (matrix or data.frame) must contain at least 3
 columns.
 }
 \details{

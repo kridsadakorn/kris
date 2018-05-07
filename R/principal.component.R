@@ -1,7 +1,8 @@
-#' A function for linear principal component analysis (PCA)
+#' Calculate linear principal component analysis (PCA) from numeric data and
+#' Single-nucleotide polymorphism (SNP) dataset
 #'
-#' @description The function is able to handle 2 types of data; linear and SNP
-#' dataset in additive coding (0, 1, and 2).
+#' @description Available for two types of data; numeric data and
+#' Single-nucleotide polymorphism (SNP) dataset in additive coding (0, 1, and 2).
 #'
 #' @param X A data matrix which rows represent samples and columns represent
 #' features.
@@ -33,48 +34,47 @@
 #'
 #' @examples
 #'
-#' ## Not run:
-#'
 #' #Load simulated dataset
-#' # data(example_SNP)
+#' \donttest{
+#' data(example_SNP)
 #'
 #' #Using default parameters
-#' # PCs <- cal.pc.linear(simsnp$snp)
-#' # summary(PCs)
+#' PCs <- cal.pc.linear(simsnp$snp)
+#' summary(PCs)
 #'
 #' #Preview $PC
-#' # print(PCs$PC[1:5,1:3])
+#' print(PCs$PC[1:5,1:3])
 #'
 #' #Preview $evalue
-#' # print(PCs$evalue[1:3])
+#' print(PCs$evalue[1:3])
 #'
-#' # plot3views(PCs$PC[,1:3], sample_labels)
+#' plot3views(PCs$PC[,1:3], sample_labels)
 #'
 #' #Calculate PCs without PC scores
 #'
-#' # PCs <- cal.pc.linear(simsnp$snp, PCscore = FALSE)
-#' # summary(PCs)
+#' PCs <- cal.pc.linear(simsnp$snp, PCscore = FALSE)
+#' summary(PCs)
 #'
 #' #Preview $PC
-#' # print(PCs$PC[1:5,1:3])
+#' print(PCs$PC[1:5,1:3])
 #'
 #' #Preview $evalue
-#' # print(PCs$evalue[1:3])
+#' print(PCs$evalue[1:3])
 #'
-#' # plot3views(PCs$PC[,1:3], sample_labels)
+#' plot3views(PCs$PC[,1:3], sample_labels)
 #'
 #' #Calculate the top 3 PCs
-#' # PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
-#' # summary(PCs)
+#' PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
+#' summary(PCs)
 #'
 #' #Preview $PC
-#' # print(PCs$PC[1:5,1:3])
+#' print(PCs$PC[1:5,1:3])
 #'
 #' #Preview $evalue
-#' # print(PCs$evalue[1:3])
+#' print(PCs$evalue[1:3])
 #'
-#' # plot3views(PCs$PC[,1:3], sample_labels)
-#'
+#' plot3views(PCs$PC[,1:3], sample_labels)
+#' }
 
 cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
                           XXT = TRUE){

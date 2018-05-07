@@ -1,4 +1,4 @@
-#' A function for calculating matrix multipication between a matrix and its
+#' Calculate matrix multipication between a matrix and its
 #' transpose for large data.
 #'
 #' @description Calculate matrix multiplication using "divide and

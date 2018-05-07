@@ -2,8 +2,7 @@
 % Please edit documentation in R/rubikClust.R
 \name{rubikclust}
 \alias{rubikclust}
-\title{A function for unsupervised clustering to detect rough structures and
-outliers.}
+\title{Unsupervised clustering to detect rough structures and outliers.}
 \usage{
 rubikclust(X, min.space = 0.4, rotation = TRUE)
 }
@@ -21,7 +20,7 @@ The returned value is a vector of numbers representing cluster
 memberships.
 }
 \description{
-The function operates on a Nx3 matrix, where N is the number of
+Handle and operate on Nx3 matrix, where N is the number of
 samples and data are collected on 3 variables.
 }
 \details{
@@ -30,7 +29,7 @@ The function rubikClust is able to take up to 3 variables
 first three columns are used; the other columns are ignored.
 }
 \examples{
-
+\donttest{
 #Load simulated dataset
 data(example_SNP)
 
@@ -59,4 +58,5 @@ table(groups)
 #Check the plot, highlight the points according to the clustering result
 mylabels <- paste0("group", as.factor(groups))
 plot3views( PCs$PC, labels = mylabels)
+}
 }

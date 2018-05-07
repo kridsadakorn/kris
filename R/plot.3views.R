@@ -1,14 +1,14 @@
-#' A function to create scatter plots in three views.
+#' Create scatter plots in three views.
 #'
-#' @description The function visualizes data in X-Y plane, X-Z plane, and Y-Z
-#' plane; an input object (matrix or data.frame) must contain at least 3
+#' @description Visualize data in X-Y plane, X-Z plane, and Y-Z
+#' plane. The input object (matrix or data.frame) must contain at least 3
 #' columns.
 #'
 #' @param X A matrix or a data.frame that contains at least 3 columns of numeric
 #' data. If there are more than 3 columns in X, only the first 3 columns will be
 #' used.
 #' @param labels A vector containing row labels of X for display. All vector
-#' elements should be of type "character" (as.character). The length of this
+#' elements should be of type "character" (as.character). The length of
 #' vector equals the number of rows in X.
 #' @param col.pat.table A data.frame that associates colors and patterns to row
 #' labels (see labels before). It needs to contain 3 columns which represent

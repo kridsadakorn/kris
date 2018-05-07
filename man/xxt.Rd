@@ -2,7 +2,7 @@
 % Please edit documentation in R/matrix.multiply.R
 \name{xxt}
 \alias{xxt}
-\title{A function for calculating matrix multipication between a matrix and its
+\title{Calculate matrix multipication between a matrix and its
 transpose for large data.}
 \usage{
 xxt(X, window.size = 5)
@@ -17,7 +17,7 @@ value is 5.}
 The multiplication matrix of \code{X.t(X)}.
 }
 \description{
-This function calculates matrix multiplication using "divide and
+Calculate matrix multiplication using "divide and
 conquer technique", which accelerates the computation to be faster.
 }
 \examples{

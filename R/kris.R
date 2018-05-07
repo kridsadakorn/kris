@@ -1,8 +1,12 @@
 #' Keen and Reliable Interface Subroutines for bioinformatic analysis
 #'
-#' The R package KRIS (Keen and Reliable InterfaceS for bioinformatic
-#' analysis) is the package providing useful funcions which are needed for
-#' bioinformatic analysis.
+#' Provides useful functions which are needed for bioinformatic analysis such as
+#' calculating linear principal components from numeric data and
+#' Single-nucleotide polymorphism (SNP) dataset, calculating fixation index
+#' (Fst) using Hudson method, creating scatter plots in 3 views, handling with
+#' PLINK binary file format, detecting rough structures and outliers using
+#' unsupervised clustering, and calculating matrix multiplication in the faster
+#' way for big data.
 #'
 #' The R package \pkg{KRIS} requires the package \pkg{rARPACK}.
 #'

@@ -31,7 +31,7 @@
 #'
 #' @examples
 #'
-#'
+#' \donttest{
 #' #Use the example files embedded in the package.
 #' bed <- system.file("extdata", "example_SNP.bed", package="KRIS")
 #' bim <- system.file("extdata", "example_SNP.bim", package="KRIS")
@@ -49,7 +49,7 @@
 #'
 #' #Preview $ind.info
 #' head(snp$ind.info)
-#'
+#' }
 read.bed <- function(bed, bim, fam, only.snp = FALSE){
 
   ret = NA
@@ -171,7 +171,7 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
 #' data(example_SNP)
 #'
 #' #Save 'simsnp' to the file as defined in 'save.file'
-#' save.file <- file.path(getwd(),"new_SNP")
+#' save.file <- file.path(tempdir(),"new_SNP")
 #' write.bed(simsnp , save.file)
 
 write.bed <- function(object, file){

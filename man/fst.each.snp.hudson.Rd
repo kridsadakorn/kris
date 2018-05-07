@@ -2,8 +2,8 @@
 % Please edit documentation in R/fst.R
 \name{fst.each.snp.hudson}
 \alias{fst.each.snp.hudson}
-\title{A function for fixation index (Fst) calculation for all SNPs between two
-groups.}
+\title{Calculate the fixation index (Fst) for all SNPs between two groups of
+individuals from Single-nucleotide polymorphism (SNP)}
 \usage{
 fst.each.snp.hudson(X, idx.p1, idx.p2)
 }

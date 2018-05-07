@@ -13,10 +13,10 @@ write.bed(object, file)
 \item{file}{A prefix of output files for BED, BIM and FAM to be saved.}
 }
 \value{
-This function returns \code{NULL}.
+\code{NULL}.
 }
 \description{
-This function writes a SNP object to the files in the binary
+Write a SNP object to the files in the binary
 PLINK format. For more information about the binary PLINK format, please
 check in the manual of PLINK.
 }
@@ -38,7 +38,7 @@ For more details about the binary PLINK format, please check
 data(example_SNP)
 
 #Save 'simsnp' to the file as defined in 'save.file'
-save.file <- file.path(getwd(),"new_SNP")
+save.file <- file.path(tempdir(),"new_SNP")
 write.bed(simsnp , save.file)
 }
 \seealso{

@@ -4,7 +4,7 @@ test_that("Write BED file",{
 
   data(example_SNP)
 
-  save.file <- file.path(getwd(),"new_SNP")
+  save.file <- file.path(tempdir(),"new_SNP")
   res <- write.bed(simsnp , save.file)
   file1 <- paste0(save.file, ".bed")
   file2 <- paste0(save.file, ".bim")

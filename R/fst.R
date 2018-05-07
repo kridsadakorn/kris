@@ -1,4 +1,5 @@
-#' A function for average fixation index (Fst) calculation between two groups.
+#' Calculate the average fixation index (Fst) between two groups of individuals
+#' from Single-nucleotide polymorphism (SNP)
 #'
 #' @description Fixation index (Fst) calculation was implemented using Hudson
 #' method as in Bhatia (2013) and Hudson (1992).
@@ -78,8 +79,8 @@ fst.hudson <-function(X, idx.p1, idx.p2){
   return(fst)
 }
 
-#' A function for fixation index (Fst) calculation for all SNPs between two
-#' groups.
+#' Calculate the fixation index (Fst) for all SNPs between two groups of
+#' individuals from Single-nucleotide polymorphism (SNP)
 #'
 #' @description Fixation index (Fst) calculation was implemented using Hudson
 #' method as in Bhatia (2013) and Hudson (1992).
