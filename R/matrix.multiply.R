@@ -1,7 +1,7 @@
 #' A function for calculating matrix multipication between a matrix and its
 #' transpose for large data.
 #'
-#' @description This function calculates matrix multiplication using "divide and
+#' @description Calculate matrix multiplication using "divide and
 #' conquer technique", which accelerates the computation to be faster.
 #'
 #' @param X An input matrix to be processed.
