@@ -19,7 +19,12 @@ output:
 
 The R package ```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
 bioinformatic analysis) is the package providing useful functions which are 
-needed for bioinformatic analysis.
+needed for bioinformatic analysis such as calculating linear principal 
+components from numeric data and Single-nucleotide polymorphism (SNP) dataset, 
+calculating fixation index (Fst) using Hudson method, creating scatter plots in 
+3 views, handling with PLINK binary file format, detecting rough structures and 
+outliers using unsupervised clustering, and calculating matrix multiplication 
+in the faster way for big data.
 
 The R package ```KRIS``` requires the package ```rARPACK```.
 
@@ -70,6 +75,10 @@ When facing error for ```testthat```, try to update the package ```testthat``` a
 Check the submission using ```R CMD check --as-cran``` and a current version of 
 r-devel, as mandated by the CRAN Repository Policy. (You could do so using the 
 win-builder service at http://win-builder.r-project.org)
+
+## Resubmit new version to CRAN
+
+Check downstream dependencies with ```devtools::revdep_check()```
 
 ### Error on checking DESCRIPTION meta-information in Linux
 

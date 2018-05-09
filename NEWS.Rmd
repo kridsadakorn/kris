@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Updates
 
 * Changed URL in the CITATION file from Gitlab to CRAN
+* Changed email in the DESCRIPTION file from Gmail to Official email
 * Fixed misspelling in a manual of data
 
 ---

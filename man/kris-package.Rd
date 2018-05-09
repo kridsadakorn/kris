@@ -44,7 +44,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Kridsadakorn Chaichoompu \email{kridsadakorn.chaichoompu@gmail.com}
+\strong{Maintainer}: Kridsadakorn Chaichoompu \email{kridsadakorn@biostatgen.org}
 
 Authors:
 \itemize{
