@@ -33,6 +33,7 @@ The R package ```KRIS``` requires the package ```rARPACK```.
 Here is the list of functions in the R package ```KRIS```:
 
 * ```cal.pc.linear```
+* ```cal.pc.projection```
 * ```fst.each.snp.hudson```
 * ```fst.hudson```
 * ```plot3views```
