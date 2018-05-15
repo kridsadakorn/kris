@@ -12,6 +12,19 @@ output:
 ---
 
 
+# KRIS 1.1.0
+
+## New features
+
+* Added the function ```cal.pc.projection``` 
+
+## Updates
+
+* Moved ```replace.missing``` to for_parallel.R from principal.component.R
+
+## Fixed bugs
+
+* Fixed bugs in test_plot3views.R
 
 # KRIS 1.0.4
 
