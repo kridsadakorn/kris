@@ -24,6 +24,9 @@ the result.}
 \item{no.pc}{A number of PCs to be calculated. If no.pc is set, PCs are
 patially calculated. Otherwise all PCs are obtained after calculation.
 Default = NA.}
+
+\item{data.type}{To specify a type of data matrix X. It can be set to
+"linear" and "snp". Default = "linear".}
 }
 \value{
 The returned value is a list with 4 objects, \code{$PC},
@@ -77,4 +80,7 @@ plot3views(PCs$PC[,1:3], PCs$label)
 
 }
 
+}
+\seealso{
+\code{\link{cal.pc.linear}}
 }

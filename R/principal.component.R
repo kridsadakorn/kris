@@ -32,6 +32,7 @@
 #'
 #' @import rARPACK
 #'
+#' @seealso \code{\link{cal.pc.projection}}
 #' @examples
 #'
 #' #Load simulated dataset
@@ -149,6 +150,8 @@ cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
 #' @param no.pc A number of PCs to be calculated. If no.pc is set, PCs are
 #' patially calculated. Otherwise all PCs are obtained after calculation.
 #' Default = NA.
+#' @param data.type To specify a type of data matrix X. It can be set to
+#' "linear" and "snp". Default = "linear".
 #'
 #' @return The returned value is a list with 4 objects, \code{$PC},
 #' \code{$id}, \code{$label},and \code{$status}. Individuals with unknown status
@@ -163,6 +166,9 @@ cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
 #' }
 #'
 #' @export
+#' @import rARPACK
+#'
+#' @seealso \code{\link{cal.pc.linear}}
 #'
 #' @examples
 #' \donttest{
@@ -202,7 +208,7 @@ cal.pc.projection <- function(X, status, individual_id = NULL, labels = NULL,
                               no.pc = NA, data.type = "linear"){
 
   #Resolve missing value by median
-  #cat(paste0("Missing values are set as medians\n"))
+
   X.median = apply(X,2,median,na.rm=TRUE)
   missing.char=NA
   X = t(apply(X,1,replace.missing,missing=missing.char,rep=X.median))

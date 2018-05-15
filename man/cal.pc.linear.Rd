@@ -85,3 +85,6 @@ print(PCs$evalue[1:3])
 plot3views(PCs$PC[,1:3], sample_labels)
 }
 }
+\seealso{
+\code{\link{cal.pc.projection}}
+}
