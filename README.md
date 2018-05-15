@@ -53,7 +53,7 @@ Install the released version of ```KRIS``` from CRAN:
 install.packages("KRIS")
 ```
 
-## Developement: problem sovling in checking the package as CRAN
+## For developemenpers: problem sovling in checking the package as CRAN
 
 ### Error of Roxygen2 in building RD files
 

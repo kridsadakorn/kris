@@ -24,6 +24,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * Moved ```replace.missing``` to for_parallel.R from principal.component.R
 
+## Fixed bugs
+
+* Fixed bugs in test_plot3views.R
+
 # KRIS 1.0.4
 
 ## Updates
