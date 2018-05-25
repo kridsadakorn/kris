@@ -14,6 +14,13 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# KRIS 1.1.1
+
+## Updates
+
+* Added more examples in plot3view
+
 # KRIS 1.1.0
 
 ## New features

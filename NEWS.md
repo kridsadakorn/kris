@@ -12,6 +12,13 @@ output:
 ---
 
 
+
+# KRIS 1.1.0
+
+## Updates
+
+* Added more examples in plot3view
+
 # KRIS 1.1.0
 
 ## New features
