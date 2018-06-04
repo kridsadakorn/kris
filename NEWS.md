@@ -1,7 +1,7 @@
 ---
 title: "NEWS"
 author: "Kridsadakorn Chaichoompu"
-date: "24/05/2018"
+date: "04/06/2018"
 output:
   html_document:
     keep_md: yes
@@ -13,11 +13,11 @@ output:
 
 
 
-# KRIS 1.1.0
+# KRIS 1.1.1
 
 ## Updates
 
-* Added more examples in plot3view
+* Updated and added more examples in plot3view
 
 # KRIS 1.1.0
 
