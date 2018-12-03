@@ -67,11 +67,11 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
     return(ret)
   }
   #Read BIM file
-  snp.info <- read.table(bim,header=FALSE)
+  snp.info <- read.table(bim,header=FALSE, colClasses = c("factor","factor","factor","factor","factor","factor"))
   colnames(snp.info) = c("chr","ID","GD","position","allele1","allele2")
 
   #Read FAM file
-  ind.info = read.table(fam,header=FALSE)
+  ind.info = read.table(fam,header=FALSE, colClasses = c("factor","factor","factor","factor","factor","factor"))
   colnames(ind.info) = c("FamID","IndID","PatID","MatID","sex","phenotype")
 
   no.ind = dim(ind.info)[1]

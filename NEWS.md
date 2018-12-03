@@ -13,6 +13,13 @@ output:
 
 
 
+# KRIS 1.1.2
+
+## Updates
+
+* Fixed bugs in read.bed
+
+
 # KRIS 1.1.1
 
 ## Updates
