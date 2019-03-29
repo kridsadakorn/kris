@@ -4,7 +4,8 @@
 \alias{plot3views}
 \title{Create scatter plots in three views.}
 \usage{
-plot3views(X, labels, col.pat.table = NA, only.row = NA)
+plot3views(X, labels, only.row = NA, plot.legend = NA,
+  plot.pattern = NA, plot.color = NA)
 }
 \arguments{
 \item{X}{A matrix or a data.frame that contains at least 3 columns of numeric
@@ -15,13 +16,13 @@ used.}
 elements should be of type "character" (as.character). The length of
 vector equals the number of rows in X.}
 
+\item{only.row}{A vector that contains subset of row numbers that are
+selected to be plotted. Default = NA.}
+
 \item{col.pat.table}{A data.frame that associates colors and patterns to row
 labels (see labels before). It needs to contain 3 columns which represent
 unique labels (column 1) and associated patterns (column 2) and colors
 (column 3). Default = NA.}
-
-\item{only.row}{A vector that contains subset of row numbers that are
-selected to be plotted. Default = NA.}
 }
 \description{
 Visualize data in X-Y plane, X-Z plane, and Y-Z
@@ -48,11 +49,13 @@ all.labels <- unique(sample_labels)
 my.colors <- c('pink', 'yellow', 'cyan', 'green')
 my.patterns<- c(0,1,2,3)
 my.table <- data.frame(all.labels, my.patterns, my.colors)
-plot3views(PCs$PC, labels = sample_labels, col.pat.table = my.table)
+plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
+plot.pattern = my.patterns, plot.color = my.colors)
 
 #To change colors and patterns using characters
 my.patterns<- c('o', 'x', '&', '#')
-#Use cbind to keep my.patterns as 'character'
+Use cbind to keep my.patterns as 'character'
 my.table <- cbind(all.labels, my.patterns, my.colors)
-plot3views(PCs$PC, labels = sample_labels, col.pat.table = my.table)
+plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
+plot.pattern = my.patterns, plot.color = my.colors)
 }

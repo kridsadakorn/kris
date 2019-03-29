@@ -6,12 +6,19 @@ output:
   html_document:
     keep_md: yes
     toc: yes
-  pdf_document: 
+  pdf_document:
     number_sections: yes
+    toc: yes
+  word_document:
     toc: yes
 ---
 
 
+# KRIS 1.1.3
+
+## Updates
+
+* Fixed bugs in plot3views for mismatching color and pattern on a plot
 
 # KRIS 1.1.2
 
