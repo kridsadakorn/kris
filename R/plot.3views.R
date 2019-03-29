@@ -41,16 +41,24 @@
 #' my.colors <- c('pink', 'yellow', 'cyan', 'green')
 #' my.patterns<- c(0,1,2,3)
 #' my.table <- data.frame(all.labels, my.patterns, my.colors)
-#' plot3views(PCs$PC, labels = sample_labels, col.pat.table = my.table)
+#' plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
+#' plot.pattern = my.patterns, plot.color = my.colors)
 #'
 #' #To change colors and patterns using characters
 #' my.patterns<- c('o', 'x', '&', '#')
-#' #Use cbind to keep my.patterns as 'character'
+#' Use cbind to keep my.patterns as 'character'
 #' my.table <- cbind(all.labels, my.patterns, my.colors)
-#' plot3views(PCs$PC, labels = sample_labels, col.pat.table = my.table)
+#' plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
+#' plot.pattern = my.patterns, plot.color = my.colors)
 
 
-plot3views <- function(X, labels, col.pat.table = NA, only.row = NA){
+plot3views <- function(X,
+                       labels,
+                       #col.pat.table = NA,
+                       only.row = NA,
+                       plot.legend = NA,
+                       plot.pattern = NA,
+                       plot.color = NA){
   map.color = c("red", rgb(0, 68, 27, maxColorValue = 255),
                 "blue", rgb(231, 41, 138, maxColorValue = 255),
                 "darkorange", "black")
@@ -64,6 +72,8 @@ plot3views <- function(X, labels, col.pat.table = NA, only.row = NA){
   map.pch = c(map.pch,33:34,42,45,47,40,91,123,41,92,93,125)
   map.pch = c(map.pch,49:57,97:107,109:110,112:119,121:122)
   map.pch = c(map.pch,65:78,81:82,84:85,89)
+
+  col.pat.table = data.frame(plot.legend, plot.pattern, plot.color)
 
   map.pattern = c()
   for (i in 1:length(map.pch))
@@ -96,9 +106,9 @@ plot3views <- function(X, labels, col.pat.table = NA, only.row = NA){
       spch = map.pch[map.pattern[k,1]]
       scolor = map.color[map.pattern[k,2]]
     }else{
-      idx = which(col.pat.table[,1] == u.label[k])
-      spch = col.pat.table[idx,2]
-      scolor = col.pat.table[idx,3]
+      idx = which(plot.legend == u.label[k])
+      spch = plot.pattern[idx]
+      scolor = plot.color[idx]
     }
 
     if (anyNA(only.row)){
@@ -124,9 +134,9 @@ plot3views <- function(X, labels, col.pat.table = NA, only.row = NA){
       spch = map.pch[map.pattern[k,1]]
       scolor = map.color[map.pattern[k,2]]
     }else{
-      idx = which(col.pat.table[,1] == u.label[k])
-      spch = col.pat.table[idx,2]
-      scolor = col.pat.table[idx,3]
+      idx = which(plot.legend == u.label[k])
+      spch = plot.pattern[idx]
+      scolor = plot.color[idx]
     }
     if (anyNA(only.row)){
       points(X[labels %in% u.label[k],3],X[labels %in% u.label[k],2],col=scolor,pch=spch)
@@ -149,9 +159,9 @@ plot3views <- function(X, labels, col.pat.table = NA, only.row = NA){
       spch = map.pch[map.pattern[k,1]]
       scolor = map.color[map.pattern[k,2]]
     }else{
-      idx = which(col.pat.table[,1] == u.label[k])
-      spch = col.pat.table[idx,2]
-      scolor = col.pat.table[idx,3]
+      idx = which(plot.legend == u.label[k])
+      spch = plot.pattern[idx]
+      scolor = plot.color[idx]
     }
 
     if (anyNA(only.row)){
