@@ -107,8 +107,8 @@ plot3views <- function(X,
       scolor = map.color[map.pattern[k,2]]
     }else{
       idx = which(plot.legend == u.label[k])
-      spch = plot.pattern[idx]
-      scolor = plot.color[idx]
+      spch = as.integer(plot.pattern[idx])
+      scolor = as.character(plot.color[idx])
     }
 
     if (anyNA(only.row)){
@@ -135,8 +135,8 @@ plot3views <- function(X,
       scolor = map.color[map.pattern[k,2]]
     }else{
       idx = which(plot.legend == u.label[k])
-      spch = plot.pattern[idx]
-      scolor = plot.color[idx]
+      spch = as.integer(plot.pattern[idx])
+      scolor = as.character(plot.color[idx])
     }
     if (anyNA(only.row)){
       points(X[labels %in% u.label[k],3],X[labels %in% u.label[k],2],col=scolor,pch=spch)
@@ -160,8 +160,8 @@ plot3views <- function(X,
       scolor = map.color[map.pattern[k,2]]
     }else{
       idx = which(plot.legend == u.label[k])
-      spch = plot.pattern[idx]
-      scolor = plot.color[idx]
+      spch = as.integer(plot.pattern[idx])
+      scolor = as.character(plot.color[idx])
     }
 
     if (anyNA(only.row)){
