@@ -2,7 +2,7 @@
 % Please edit documentation in R/principal.component.R
 \name{cal.pc.projection}
 \alias{cal.pc.projection}
-\title{Calculate linear principal component analysis (PCA) with projection method
+\title{Calculate linear principal component analysis (PCA) with a projection method
 for Single-nucleotide polymorphism (SNP) dataset.}
 \usage{
 cal.pc.projection(X, status, individual_id = NULL, labels = NULL,
