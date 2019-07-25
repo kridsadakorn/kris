@@ -52,6 +52,7 @@ my.table <- data.frame(all.labels, my.patterns, my.colors)
 plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
 plot.pattern = my.patterns, plot.color = my.colors)
 
+
 #To change colors and patterns using characters
 my.patterns<- c('o', 'x', '&', '#')
 Use cbind to keep my.patterns as 'character'
