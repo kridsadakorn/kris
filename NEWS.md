@@ -1,7 +1,7 @@
 ---
 title: "NEWS"
 author: "Kridsadakorn Chaichoompu"
-date: "04/06/2018"
+date: "10/05/2019"
 output:
   html_document:
     keep_md: yes
@@ -13,6 +13,19 @@ output:
     toc: yes
 ---
 
+
+# KRIS 1.1.5
+
+## Updates
+
+* Add the function to calculate pvalue from 2 different groups using regression model and allowing to correct for covariates
+* Change the way to call function and fixed bugs for plot3views
+
+# KRIS 1.1.4
+
+## Updates
+
+* Fixed some incorrect descriptions in the manual.
 
 # KRIS 1.1.3
 

@@ -132,7 +132,7 @@ cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
 }
 
 
-#' Calculate linear principal component analysis (PCA) with projection method
+#' Calculate linear principal component analysis (PCA) with a projection method
 #' for Single-nucleotide polymorphism (SNP) dataset.
 #'
 #' In order to perform the projection method, disease status for all individuals

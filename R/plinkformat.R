@@ -136,7 +136,7 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
 }
 
 
-#' Write an list of SNP object to the binary PLINK format (BED, BIM, and FAM)
+#' Write a list of SNP object to the binary PLINK format (BED, BIM, and FAM)
 #'
 #' @description Write a SNP object to the files in the binary
 #' PLINK format. For more information about the binary PLINK format, please
