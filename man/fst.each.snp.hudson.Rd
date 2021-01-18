@@ -18,15 +18,6 @@ in the matrix X.}
 
 \item{idx.p2}{An integer vector contains the row indices of second population
 in the matrix X.}
-
-\item{X}{A matrix contains the number 0, 1, and 2 representing SNP in
-additive coding. Rows represent individuals and columns represent SNP.}
-
-\item{idx.p1}{An integer vector contains the row indices of first population
-in the matrix X.}
-
-\item{idx.p2}{An integer vector contains the row indices of second population
-in the matrix X.}
 }
 \value{
 The function returns a matrix of pairwise Fst values for all SNPs

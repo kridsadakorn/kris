@@ -4,8 +4,14 @@
 \alias{plot3views}
 \title{Create scatter plots in three views.}
 \usage{
-plot3views(X, labels, only.row = NA, plot.legend = NA,
-  plot.pattern = NA, plot.color = NA)
+plot3views(
+  X,
+  labels,
+  only.row = NA,
+  plot.legend = NA,
+  plot.pattern = NA,
+  plot.color = NA
+)
 }
 \arguments{
 \item{X}{A matrix or a data.frame that contains at least 3 columns of numeric
