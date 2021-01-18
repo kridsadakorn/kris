@@ -31,7 +31,6 @@
 #'
 #' @examples
 #'
-#' \donttest{
 #' #Use the example files embedded in the package.
 #' bed <- system.file("extdata", "example_SNP.bed", package="KRIS")
 #' bim <- system.file("extdata", "example_SNP.bim", package="KRIS")
@@ -49,7 +48,7 @@
 #'
 #' #Preview $ind.info
 #' head(snp$ind.info)
-#' }
+
 read.bed <- function(bed, bim, fam, only.snp = FALSE){
 
   ret = NA
