@@ -1,4 +1,4 @@
-image: rocker/rstudio  
+image: rstudio/r-base  
 test:  
    script:
     - R -e 'install.packages(c("rARPACK","grDevices","graphics","stats","utils","testthat","devtools"))'
