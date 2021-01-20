@@ -12,6 +12,9 @@ output:
   word_document:
     toc: yes
 ---
+# KRIS 1.1.7
+
+* removed donttest 
 
 # KRIS 1.1.6
 
