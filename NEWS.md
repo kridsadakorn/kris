@@ -1,25 +1,12 @@
----
-title: "NEWS"
-author: "Kridsadakorn Chaichoompu"
-date: "10/05/2019"
-output:
-  html_document:
-    keep_md: yes
-    toc: yes
-  pdf_document:
-    number_sections: yes
-    toc: yes
-  word_document:
-    toc: yes
----
+
 # KRIS 1.1.7
 
 * Updated the reference with DOI in Description file
+* Updated Markdown files
 
 # KRIS 1.1.6
 
 * Updated the packages according to R v4.0.0
-
 
 # KRIS 1.1.5
 
@@ -66,7 +53,7 @@ output:
 
 * Fixed the help file for ```cal.pc.linear``` and  ```rubikclust```.
 
-# KRIS 1.0.0.0
+# KRIS 1.0.0
 
 ## Initial functions
 
