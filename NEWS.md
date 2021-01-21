@@ -14,11 +14,11 @@ output:
 ---
 # KRIS 1.1.7
 
-* removed donttest 
+* Updated the reference with DOI in Description file
 
 # KRIS 1.1.6
 
-* Update the packages according to R v4.0.0
+* Updated the packages according to R v4.0.0
 
 
 # KRIS 1.1.5
