@@ -3,6 +3,8 @@
 
 * Updated the reference with DOI in Description file
 * Updated Markdown files
+* extra on Gitlab,  document page pkgdown::build_site()
+* extra on Gitlab, add use_gitlab_ci()
 
 # KRIS 1.1.6
 
