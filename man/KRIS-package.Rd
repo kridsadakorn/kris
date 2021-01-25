@@ -39,8 +39,8 @@ Moreover, here is the list of example datasets in the R package \pkg{KRIS}:
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://gitlab.com/kris.ccp/kris}
-  \item Report bugs at \url{https://gitlab.com/kris.ccp/kris/-/issues}
+  \item \url{https://gitlab.com/chaichoompu/kris}
+  \item Report bugs at \url{https://gitlab.com/chaichoompu/kris/-/issues}
 }
 
 }
