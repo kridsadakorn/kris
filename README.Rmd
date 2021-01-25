@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# KRIS <img src="man/figures/kris_logo.png" align="right" />
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The R package ```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
+bioinformatic analysis) is the package providing useful functions which are 
+needed for bioinformatic analysis such as calculating linear principal 
+components from numeric data and Single-nucleotide polymorphism (SNP) dataset, 
+calculating fixation index (Fst) using Hudson method, creating scatter plots in 
+3 views, handling with PLINK binary file format, detecting rough structures and 
+outliers using unsupervised clustering, and calculating matrix multiplication 
+in the faster way for big data..
+
+## Installation
+
+You can install the released version of KRIS from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("KRIS")
+```
+
+Alternatively, you can install the dev version of KRIS from [Gitlab](https://gitlab.com/chaichoompu/kris) with
+``` r
+install.packages("remotes")
+remotes::install_gitlab("chaichoompu/kris", dependencies = TRUE)
+```
+
+## Document
+
+You can see the reference manual from: [https://chaichoompu.gitlab.io/kris_doc/index.html](https://chaichoompu.gitlab.io/kris_doc/index.html)
+
+
+## Example
+
+This is a basic example which shows you how to use the package:
+
+```{r example}
+library(KRIS)
+
+data(example_SNP)
+```
+
+```example_SNP``` consists of the simulated SNP data ```simsnp``` and the sample labels ```sample_labels```.
+
+```{r example_SNP}
+summary(simsnp)
+summary(sample_labels)
+```
+
+To calcualte the first three linear principal components from SNP data:
+
+```{r linear_PCA}
+PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
+```
+
+You can visualize 3 dimensions for the first three principal components as:
+
+```{r plotpc, echo=FALSE}
+plot3views( PCs$PC, sample_labels)
+```
+
+## About
+
+* Prof. Kristel Van Steen, visit  <a href="http://bio3.giga.ulg.ac.be/" border=0 style="border:0; text-decoration:none; outline:none"><img width="40px" src="man/figures/bio3_logo.png" align="center" /></a><br />
+* Kridsadakorn Chaichoompu, visit <a href="http://bio3.giga.ulg.ac.be/" border=0 style="border:0; text-decoration:none; outline:none"><img width="110px" src="man/figures/biostatgen_logo.png" align="center" /></a><br />

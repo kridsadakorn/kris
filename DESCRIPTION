@@ -2,7 +2,6 @@ Package: KRIS
 Type: Package
 Title: Keen and Reliable Interface Subroutines for Bioinformatic Analysis
 Version: 1.1.7
-Authors@R: c(person(given = "Kridsadakorn", family = "Chaichoompu", email = "kridsadakorn@biostatgen.org", role = c("aut", "cre")),person(given = "Kristel", family = 'Van Steen', role = "aut"),person(given = "Fentaw", family = "Abegaz", role = "aut"),person(given = "Sissades", family = "Tongsima", role = "aut"),person(given = "Philip", family = "James Shaw", role = "aut"),person(given = "Anavaj", family = "Sakuntabhai", role = "aut"),person(given = "Luisa", family = "Pereira", role = "aut"))
 Description: Provides useful functions which are needed for bioinformatic analysis such as calculating linear principal components from numeric data and Single-nucleotide polymorphism (SNP) dataset, calculating fixation index (Fst) using Hudson method explained by Bhatia et al. (2013) <doi: 10.1101/gr.154831.113>, creating scatter plots in 3 views, handling with PLINK binary file format, detecting rough structures and outliers using unsupervised clustering, and calculating matrix multiplication in the faster way for big data.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
@@ -14,3 +13,4 @@ Imports: rARPACK,grDevices,graphics,stats,utils
 Suggests: testthat
 BugReports: https://gitlab.com/chaichoompu/kris/-/issues
 URL: https://gitlab.com/chaichoompu/kris
+Authors@R: c(person(given = "Kridsadakorn", family = "Chaichoompu", email = "kridsadakorn@biostatgen.org", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-8123-3409")),person(given = "Kristel", family = 'Van Steen', role = "aut", comment = c(ORCID = "0000-0001-9868-5033")),person(given = "Fentaw", family = "Abegaz", role = "aut", comment = c(ORCID = "0000-0002-6294-4360")),person(given = "Sissades", family = "Tongsima", role = "aut", comment = c(ORCID = "0000-0002-1491-1839")),person(given = "Philip", family = "James Shaw", role = "aut"),person(given = "Anavaj", family = "Sakuntabhai", role = "aut", comment = c(ORCID = "0000-0001-9099-6937")),person(given = "Luisa", family = "Pereira", role = "aut", comment = c(ORCID = "0000-0002-4271-1527")))
