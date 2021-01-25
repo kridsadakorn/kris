@@ -7,15 +7,15 @@
 
 <!-- badges: end -->
 
-The R package `KRIS` (**K**een and **R**eliable **I**nterface
-**S**ubroutines for bioinformatic analysis) is the package providing
-useful functions which are needed for bioinformatic analysis such as
-calculating linear principal components from numeric data and
-Single-nucleotide polymorphism (SNP) dataset, calculating fixation index
-(Fst) using Hudson method, creating scatter plots in 3 views, handling
-with PLINK binary file format, detecting rough structures and outliers
-using unsupervised clustering, and calculating matrix multiplication in
-the faster way for big data..
+`KRIS` (**K**een and **R**eliable **I**nterface **S**ubroutines for
+bioinformatic analysis) is the package providing useful functions which
+are needed for bioinformatic analysis such as calculating linear
+principal components from numeric data and Single-nucleotide
+polymorphism (SNP) dataset, calculating fixation index (Fst) using
+Hudson method, creating scatter plots in 3 views, handling with PLINK
+binary file format, detecting rough structures and outliers using
+unsupervised clustering, and calculating matrix multiplication in the
+faster way for big data..
 
 ## Installation
 

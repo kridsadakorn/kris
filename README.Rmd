@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The R package ```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
+```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
 bioinformatic analysis) is the package providing useful functions which are 
 needed for bioinformatic analysis such as calculating linear principal 
 components from numeric data and Single-nucleotide polymorphism (SNP) dataset, 
