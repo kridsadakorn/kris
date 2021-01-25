@@ -39,7 +39,37 @@ Install the released version of ```KRIS``` from CRAN:
 install.packages("KRIS")
 ```
 
-## For developemenpers: problem sovling in checking the package as CRAN
+## Document
+
+Please check the reference manual here: [https://chaichoompu.gitlab.io/kris_doc/index.html](https://chaichoompu.gitlab.io/kris_doc/index.html)
+
+## Citation
+
+Please check how to cite the package
+```{r}
+citation("KRIS")
+```
+or as below:
+```
+To cite KRIS in publications use:
+
+  Kridsadakorn Chaichoompu, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira, and
+  Kristel Van Steen (2018). KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis. R package version
+  1.1.6. URL: https://CRAN.R-project.org/package=KRIS
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis},
+    author = {Kridsadakorn Chaichoompu and Fentaw Abegaz and Sissades Tongsima and Philip {James Shaw} and Anavaj Sakuntabhai and Luisa Pereira and Kristel {Van Steen}},
+    year = {2018},
+    note = {R package version 1.1.6},
+    url = {https://CRAN.R-project.org/package=KRIS},
+  }
+```
+## For developers
+
+You may face these problems, some notes here might be useful. 
 
 ### Error of Roxygen2 in building RD files
 
