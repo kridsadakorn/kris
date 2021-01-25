@@ -45,16 +45,16 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Kridsadakorn Chaichoompu \email{kridsadakorn@biostatgen.org}
+\strong{Maintainer}: Kridsadakorn Chaichoompu \email{kridsadakorn@biostatgen.org} (\href{https://orcid.org/0000-0002-8123-3409}{ORCID})
 
 Authors:
 \itemize{
-  \item Kristel Van Steen
-  \item Fentaw Abegaz
-  \item Sissades Tongsima
+  \item Kristel Van Steen (\href{https://orcid.org/0000-0001-9868-5033}{ORCID})
+  \item Fentaw Abegaz (\href{https://orcid.org/0000-0002-6294-4360}{ORCID})
+  \item Sissades Tongsima (\href{https://orcid.org/0000-0002-1491-1839}{ORCID})
   \item Philip James Shaw
-  \item Anavaj Sakuntabhai
-  \item Luisa Pereira
+  \item Anavaj Sakuntabhai (\href{https://orcid.org/0000-0001-9099-6937}{ORCID})
+  \item Luisa Pereira (\href{https://orcid.org/0000-0002-4271-1527}{ORCID})
 }
 
 }
