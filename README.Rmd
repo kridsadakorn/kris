@@ -22,6 +22,7 @@ knitr::opts_chunk$set(
 [![codecov](https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6)](https://codecov.io/gh/kridsadakorn/kris)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![DOI](https://zenodo.org/badge/333291793.svg)](https://zenodo.org/badge/latestdoi/333291793)
 <!-- badges: end -->
 
 ```KRIS``` (**K**een and **R**eliable **I**nterface **S**ubroutines for 
