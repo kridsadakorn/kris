@@ -13,6 +13,7 @@ status](https://www.r-pkg.org/badges/version/KRIS)](https://CRAN.R-project.org/p
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![DOI](https://zenodo.org/badge/333291793.svg)](https://zenodo.org/badge/latestdoi/333291793)
 <!-- badges: end -->
 
 `KRIS` (**K**een and **R**eliable **I**nterface **S**ubroutines for
