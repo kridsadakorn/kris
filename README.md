@@ -5,8 +5,14 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/kridsadakorn/kris/workflows/R-CMD-check/badge.svg)](https://github.com/kridsadakorn/kris/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/KRIS)](https://CRAN.R-project.org/package=KRIS)
+[![codecov](https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6)](https://codecov.io/gh/kridsadakorn/kris)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 <!-- badges: end -->
 
 `KRIS` (**K**een and **R**eliable **I**nterface **S**ubroutines for
