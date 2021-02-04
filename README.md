@@ -36,17 +36,17 @@ install.packages("KRIS")
 ```
 
 Alternatively, you can install the dev version of KRIS from
-[Gitlab](https://gitlab.com/chaichoompu/kris) with
+[Gitlab](https://github.com/kridsadakorn/kris) with
 
 ``` r
 install.packages("remotes")
-remotes::install_gitlab("chaichoompu/kris", dependencies = TRUE)
+remotes::install_github("kridsadakorn/kris", dependencies = TRUE)
 ```
 
 ## Document
 
 You can see the reference manual from:
-<https://chaichoompu.gitlab.io/kris_doc/index.html>
+<https://www.biostatgen.org/kris/>
 
 ## Example
 
@@ -88,4 +88,4 @@ as:
   - Prof. Kristel Van Steen, visit
     <a href="http://bio3.giga.ulg.ac.be/" border=0 style="border:0; text-decoration:none; outline:none"><img width="40px" src="man/figures/bio3_logo.png" align="center" /></a><br />
   - Kridsadakorn Chaichoompu, visit
-    <a href="http://www.biostatgen.org/" border=0 style="border:0; text-decoration:none; outline:none"><img width="110px" src="man/figures/biostatgen_logo.png" align="center" /></a><br />
+    <a href="https://www.biostatgen.org/" border=0 style="border:0; text-decoration:none; outline:none"><img width="110px" src="man/figures/biostatgen_logo.png" align="center" /></a><br />
