@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # KRIS <img src="man/figures/kris_logo.png" align="right" />
@@ -14,6 +13,7 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![DOI](https://zenodo.org/badge/333291793.svg)](https://zenodo.org/badge/latestdoi/333291793)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris?ref=badge_shield)
 <!-- badges: end -->
 
 `KRIS` (**K**een and **R**eliable **I**nterface **S**ubroutines for
@@ -89,3 +89,7 @@ as:
     <a href="http://bio3.giga.ulg.ac.be/" border=0 style="border:0; text-decoration:none; outline:none"><img width="40px" src="man/figures/bio3_logo.png" align="center" /></a><br />
   - Kridsadakorn Chaichoompu, visit
     <a href="https://www.biostatgen.org/" border=0 style="border:0; text-decoration:none; outline:none"><img width="110px" src="man/figures/biostatgen_logo.png" align="center" /></a><br />
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris?ref=badge_large)
