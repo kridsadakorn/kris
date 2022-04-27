@@ -1,7 +1,7 @@
 Package: KRIS
 Type: Package
 Title: Keen and Reliable Interface Subroutines for Bioinformatic Analysis
-Version: 1.1.8
+Version: 1.1.9
 Description: Provides useful functions which are needed for bioinformatic analysis such as calculating linear principal components from numeric data and Single-nucleotide polymorphism (SNP) dataset, calculating fixation index (Fst) using Hudson method explained by Bhatia et al. (2013) <doi: 10.1101/gr.154831.113>, creating scatter plots in 3 views, handling with PLINK binary file format, detecting rough structures and outliers using unsupervised clustering, and calculating matrix multiplication in the faster way for big data.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
