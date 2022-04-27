@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">KRIS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.8</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/kridsadakorn/kris/">
+  <a href="https://github.com/kridsadakorn/kris/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -76,45 +72,44 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="kris-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#kris-" class="anchor"></a>KRIS <img src="reference/figures/kris_logo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="kris-">KRIS <img src="reference/figures/kris_logo.png" align="right"><a class="anchor" aria-label="anchor" href="#kris-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <p><code>KRIS</code> (<strong>K</strong>een and <strong>R</strong>eliable <strong>I</strong>nterface <strong>S</strong>ubroutines for bioinformatic analysis) is the package providing useful functions which are needed for bioinformatic analysis such as calculating linear principal components from numeric data and Single-nucleotide polymorphism (SNP) dataset, calculating fixation index (Fst) using Hudson method, creating scatter plots in 3 views, handling with PLINK binary file format, detecting rough structures and outliers using unsupervised clustering, and calculating matrix multiplication in the faster way for big data..</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of KRIS from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the released version of KRIS from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"KRIS"</span><span class="op">)</span></code></pre></div>
-<p>Alternatively, you can install the dev version of KRIS from <a href="https://github.com/kridsadakorn/kris">Gitlab</a> with</p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"KRIS"</span><span class="op">)</span></code></pre></div>
+<p>Alternatively, you can install the dev version of KRIS from <a href="https://github.com/kridsadakorn/kris" class="external-link">Gitlab</a> with</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"kridsadakorn/kris"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"kridsadakorn/kris"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="document" class="section level2">
-<h2 class="hasAnchor">
-<a href="#document" class="anchor"></a>Document</h2>
-<p>You can see the reference manual from: <a href="https://www.biostatgen.org/kris/" class="uri">https://www.biostatgen.org/kris/</a></p>
+<div class="section level2">
+<h2 id="document">Document<a class="anchor" aria-label="anchor" href="#document"></a>
+</h2>
+<p>You can see the reference manual from: <a href="https://www.biostatgen.org/kris/" class="external-link uri">https://www.biostatgen.org/kris/</a></p>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <p>This is a basic example which shows you how to use the package:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kridsadakorn/kris">KRIS</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kridsadakorn/kris" class="external-link">KRIS</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">example_SNP</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">example_SNP</span><span class="op">)</span></code></pre></div>
 <p><code>example_SNP</code> consists of the simulated SNP data <code>simsnp</code> and the sample labels <code>sample_labels</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simsnp</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">simsnp</span><span class="op">)</span>
 <span class="co">#&gt;          Length Class      Mode   </span>
 <span class="co">#&gt; snp      206000 -none-     numeric</span>
 <span class="co">#&gt; snp.info      6 data.frame list   </span>
 <span class="co">#&gt; ind.info      6 data.frame list</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">sample_labels</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">sample_labels</span><span class="op">)</span>
 <span class="co">#&gt;    Length     Class      Mode </span>
 <span class="co">#&gt;       103 character character</span></code></pre></div>
 <p>To calcualte the first three linear principal components from SNP data:</p>
@@ -123,13 +118,18 @@
 <p>You can visualize 3 dimensions for the first three principal components as:</p>
 <p><img src="reference/figures/README-plotpc-1.png" width="100%"></p>
 </div>
-<div id="about" class="section level2">
-<h2 class="hasAnchor">
-<a href="#about" class="anchor"></a>About</h2>
+<div class="section level2">
+<h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
+</h2>
+<p><a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris?ref=badge_large" class="external-link"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris.svg?type=large" alt="FOSSA Status"></a></p>
+</div>
+<div class="section level2">
+<h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>
+</h2>
 <ul>
-<li>Prof. Kristel Van Steen, visit <a href="http://bio3.giga.ulg.ac.be/" border="0" style="border:0; text-decoration:none; outline:none"><img width="40px" src="reference/figures/bio3_logo.png" align="center"></a><br>
+<li>Prof. Kristel Van Steen, visit <a href="http://bio3.giga.ulg.ac.be/" border="0" style="border:0; text-decoration:none; outline:none" class="external-link"><img width="40px" src="reference/figures/bio3_logo.png" align="center"></a><br>
 </li>
-<li>Kridsadakorn Chaichoompu, visit <a href="https://www.biostatgen.org/" border="0" style="border:0; text-decoration:none; outline:none"><img width="110px" src="reference/figures/biostatgen_logo.png" align="center"></a><br>
+<li>Kridsadakorn Chaichoompu, visit <a href="https://www.biostatgen.org/" border="0" style="border:0; text-decoration:none; outline:none" class="external-link"><img width="110px" src="reference/figures/biostatgen_logo.png" align="center"></a><br>
 </li>
 </ul>
 </div>
@@ -138,64 +138,69 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=KRIS">https://​cloud.r-project.org/​package=KRIS</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/kridsadakorn/kris/">https://​github.com/​kridsadakorn/​kris/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/kridsadakorn/kris/issues">https://​github.com/​kridsadakorn/​kris/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
-</ul>
-</div>
-<div class="citation">
-<h2>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html">Citing KRIS</a></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Kridsadakorn Chaichoompu <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-8123-3409" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Kristel Van Steen <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9868-5033" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Fentaw Abegaz <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-6294-4360" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Sissades Tongsima <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1491-1839" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Philip James Shaw <br><small class="roles"> Author </small>  </li>
-<li>Anavaj Sakuntabhai <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9099-6937" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Luisa Pereira <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4271-1527" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="https://cloud.r-project.org/package=KRIS" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/kridsadakorn/kris/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/kridsadakorn/kris/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/kridsadakorn/kris/actions"><img src="https://github.com/kridsadakorn/kris/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://CRAN.R-project.org/package=KRIS"><img src="https://www.r-pkg.org/badges/version/KRIS" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/kridsadakorn/kris"><img src="https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6" alt="codecov"></a></li>
-<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
-<li><a href="https://zenodo.org/badge/latestdoi/333291793"><img src="https://zenodo.org/badge/333291793.svg" alt="DOI"></a></li>
+<li>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing KRIS</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Kridsadakorn Chaichoompu <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-8123-3409" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Kristel Van Steen <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9868-5033" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Fentaw Abegaz <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-6294-4360" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sissades Tongsima <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1491-1839" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Philip James Shaw <br><small class="roles"> Author </small>  </li>
+<li>Anavaj Sakuntabhai <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-9099-6937" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Luisa Pereira <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-4271-1527" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/kridsadakorn/kris/actions" class="external-link"><img src="https://github.com/kridsadakorn/kris/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://CRAN.R-project.org/package=KRIS" class="external-link"><img src="https://www.r-pkg.org/badges/version/KRIS" alt="CRAN status"></a></li>
+<li><a href="https://codecov.io/gh/kridsadakorn/kris" class="external-link"><img src="https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6" alt="codecov"></a></li>
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://zenodo.org/badge/latestdoi/333291793" class="external-link"><img src="https://zenodo.org/badge/333291793.svg" alt="DOI"></a></li>
+<li><a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris?ref=badge_shield" class="external-link"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris.svg?type=shield" alt="FOSSA Status"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Kridsadakorn Chaichoompu, Kristel Van Steen, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira.</p>
+  <p></p>
+<p>Developed by Kridsadakorn Chaichoompu, Kristel Van Steen, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>
@@ -203,6 +208,8 @@
 
   
 
+
+  
 
   </body>
 </html>
