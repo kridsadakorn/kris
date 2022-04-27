@@ -1,5 +1,10 @@
 # KRIS 1.1.9
 
+* Update README.rmd due to the pull request from fossabot, however, reject the initial request by fossabot.
+
+# KRIS 1.1.8
+
+* Update the manual
 
 # KRIS 1.1.7
 
