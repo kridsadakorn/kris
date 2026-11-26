@@ -2,27 +2,25 @@
 % Please edit documentation in R/fst.R
 \name{fst.hudson}
 \alias{fst.hudson}
-\title{Calculate the average fixation index (Fst) between two groups of individuals
-from Single-nucleotide polymorphism (SNP)}
+\title{Average fixation index (Fst) between two groups}
 \usage{
 fst.hudson(X, idx.p1, idx.p2)
 }
 \arguments{
-\item{X}{A matrix contains the number 0, 1, and 2 representing SNP in
-additive coding. Rows represent individuals and columns represent SNP.}
+\item{X}{A matrix of SNPs in additive coding (0, 1, 2), with individuals in
+rows and SNPs in columns.}
 
-\item{idx.p1}{An integer vector contains the row indices of first population
-in the matrix X.}
+\item{idx.p1}{Row indices of the individuals in the first group.}
 
-\item{idx.p2}{An integer vector contains the row indices of second population
-in the matrix X.}
+\item{idx.p2}{Row indices of the individuals in the second group.}
 }
 \value{
-The function returns an average Fst value between 2 specified groups.
+A single Fst value.
 }
 \description{
-Fixation index (Fst) calculation was implemented using Hudson
-method as in Bhatia (2013) and Hudson (1992).
+Computes the average Fst over all SNPs between two groups of
+individuals with the Hudson method (Hudson et al. 1992). The average is
+taken as a ratio of averages, as recommended by Bhatia et al. (2013).
 }
 \examples{
 

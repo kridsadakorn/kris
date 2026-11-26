@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/kridsadakorn/kris/workflows/R-CMD-check/badge.svg)](https://github.com/kridsadakorn/kris/actions)
+[![R-CMD-check](https://github.com/kridsadakorn/kris/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kridsadakorn/kris/actions/workflows/R-CMD-check.yaml)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/KRIS)](https://CRAN.R-project.org/package=KRIS)
 [![codecov](https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6)](https://app.codecov.io/gh/kridsadakorn/kris)
@@ -19,40 +19,39 @@ Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkri
 <!-- badges: end -->
 
 `KRIS` (**K**een and **R**eliable **I**nterface **S**ubroutines for
-bioinformatic analysis) is the package providing useful functions which
-are needed for bioinformatic analysis such as calculating linear
-principal components from numeric data and Single-nucleotide
-polymorphism (SNP) dataset, calculating fixation index (Fst) using
-Hudson method, creating scatter plots in 3 views, handling with PLINK
-binary file format, detecting rough structures and outliers using
-unsupervised clustering, and calculating matrix multiplication in the
-faster way for big data..
+bioinformatic analysis) is an R package for common steps in the analysis of
+numeric and SNP data. It can:
+
+- calculate linear principal components (PCA) from numeric or SNP data
+- calculate the fixation index (Fst) between two groups with the Hudson method
+- draw scatter plots of 3 variables in three views
+- read and write binary PLINK files (BED, BIM and FAM)
+- find rough structure and outliers with unsupervised clustering
+- multiply large matrices by their transpose in blocks
 
 ## Installation
 
-You can install the released version of KRIS from
-[CRAN](https://CRAN.R-project.org) with:
+Install the released version from [CRAN](https://CRAN.R-project.org):
 
 ``` r
 install.packages("KRIS")
 ```
 
-Alternatively, you can install the dev version of KRIS from
-[GitHub](https://github.com/kridsadakorn/kris) with
+Or install the development version from
+[GitHub](https://github.com/kridsadakorn/kris):
 
 ``` r
 install.packages("remotes")
 remotes::install_github("kridsadakorn/kris", dependencies = TRUE)
 ```
 
-## Document
+## Documentation
 
-You can see the reference manual from:
-<https://www.biostatgen.org/kris/>
+The reference manual is at <https://www.biostatgen.org/kris/>.
 
 ## Example
 
-This is a basic example which shows you how to use the package:
+Load the package and the example data:
 
 ``` r
 library(KRIS)
@@ -60,8 +59,8 @@ library(KRIS)
 data(example_SNP)
 ```
 
-`example_SNP` consists of the simulated SNP data `simsnp` and the sample
-labels `sample_labels`.
+`example_SNP` holds two objects: the simulated SNP data `simsnp` and the
+population label of each individual, `sample_labels`.
 
 ``` r
 summary(simsnp)
@@ -74,14 +73,17 @@ summary(sample_labels)
 #>       103 character character
 ```
 
-To calcualte the first three linear principal components from SNP data:
+Calculate the first three principal components:
 
 ``` r
 PCs <- cal.pc.linear(simsnp$snp, no.pc = 3)
 ```
 
-You can visualize 3 dimensions for the first three principal components
-as:
+Plot them in three views, colored by population:
+
+``` r
+plot3views( PCs$PC, sample_labels)
+```
 
 <img src="man/figures/README-plotpc-1.png" width="100%" />
 

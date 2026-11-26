@@ -3,17 +3,16 @@
 \docType{data}
 \name{sample_labels}
 \alias{sample_labels}
-\title{Synthetic dataset containing population labels for the dataset simsnp.}
+\title{Population labels for simsnp}
 \format{
-A vector with 753 elements.
+A vector with 103 elements.
 }
 \usage{
 data(example_SNP)
 }
 \description{
-A dataset contains a character vector of 753 elements containing labels or
-populations of 753 individuals which they belong. Three populations and
-outliers were labeled as "pop1", "pop2", "pop3", and "outlier".
+The population label of each of the 103 individuals in
+\code{\link{simsnp}}: "pop1", "pop2" or "outlier3".
 }
 \seealso{
 \code{\link{simsnp}}

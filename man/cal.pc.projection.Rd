@@ -2,8 +2,7 @@
 % Please edit documentation in R/principal.component.R
 \name{cal.pc.projection}
 \alias{cal.pc.projection}
-\title{Calculate linear principal component analysis (PCA) with a projection method
-for Single-nucleotide polymorphism (SNP) dataset.}
+\title{PCA of controls with cases projected onto it}
 \usage{
 cal.pc.projection(
   X,
@@ -15,42 +14,38 @@ cal.pc.projection(
 )
 }
 \arguments{
-\item{X}{A data matrix which rows represent samples and columns represent
-features.}
+\item{X}{A numeric matrix with samples in rows and features in columns.}
 
-\item{status}{A vector of numbers that contains disease status for all
-individuals. For control group, the status is "1", and "2" for case group.
-Individuals with unknown status (other numbers) are ignored and excluded from
+\item{status}{A numeric vector with the disease status of each individual:
+1 for control, 2 for case. Individuals with any other value are left out of
 the result.}
 
-\item{individual_id}{A vector of charactors that contains individuals IDs}
+\item{individual_id}{Optional character vector of individual IDs.}
 
-\item{labels}{A vector of charactors that contains labels for all lindividuals}
+\item{labels}{Optional character vector of labels, such as population
+names.}
 
-\item{no.pc}{A number of PCs to be calculated. If no.pc is set, PCs are
-patially calculated. Otherwise all PCs are obtained after calculation.
-Default = NA.}
+\item{no.pc}{Number of PCs to compute. If NA (default), all PCs are
+computed.}
 
-\item{data.type}{To specify a type of data matrix X. It can be set to
-"linear" and "snp". Default = "linear".}
+\item{data.type}{Type of data in X: "linear" (default) or "snp".}
 }
 \value{
-The returned value is a list with 4 objects, \code{$PC},
-\code{$id}, \code{$label},and \code{$status}. Individuals with unknown status
-are excluded.
+A list in which controls come first, then cases:
 \itemize{
-\item \code{$PC} is a PC matrix which rows represent samples and columns
-represent PCs.
-\item \code{$individual_id} is a vector of charactors that contains individuals IDs.
-\item \code{$label} is a vector of charactors that contains labels for all lindividuals.
-\item \code{$status} is a vector of numbers that contains disease status for all.
-individuals.
+\item \code{$PC}: a matrix of PCs, with individuals in rows and PCs in
+columns.
+\item \code{$id}: the individual IDs, or NULL if \code{individual_id} was
+not given.
+\item \code{$label}: the labels, or NULL if \code{labels} was not given.
+\item \code{$status}: "control" or "case" for each individual.
 }
 }
 \description{
-In order to perform the projection method, disease status for all individuals
-are required. First, PCA is performed only in control group, then project
-the scores from control group into case group.
+Computes principal components (PCs) from the control group
+only, then projects the case group onto those PCs. The disease status of
+every individual is required. Missing values are replaced by the column
+median before the analysis.
 }
 \examples{
 

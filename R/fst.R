@@ -1,17 +1,15 @@
-#' Calculate the average fixation index (Fst) between two groups of individuals
-#' from Single-nucleotide polymorphism (SNP)
+#' Average fixation index (Fst) between two groups
 #'
-#' @description Fixation index (Fst) calculation was implemented using Hudson
-#' method as in Bhatia (2013) and Hudson (1992).
+#' @description Computes the average Fst over all SNPs between two groups of
+#' individuals with the Hudson method (Hudson et al. 1992). The average is
+#' taken as a ratio of averages, as recommended by Bhatia et al. (2013).
 #'
-#' @param X A matrix contains the number 0, 1, and 2 representing SNP in
-#' additive coding. Rows represent individuals and columns represent SNP.
-#' @param idx.p1 An integer vector contains the row indices of first population
-#' in the matrix X.
-#' @param idx.p2 An integer vector contains the row indices of second population
-#' in the matrix X.
+#' @param X A matrix of SNPs in additive coding (0, 1, 2), with individuals in
+#' rows and SNPs in columns.
+#' @param idx.p1 Row indices of the individuals in the first group.
+#' @param idx.p2 Row indices of the individuals in the second group.
 #'
-#' @return The function returns an average Fst value between 2 specified groups.
+#' @return A single Fst value.
 #'
 #' @references
 #' Bhatia, G., Patterson, N., Sankararaman, S., and Price, A.L. (2013).
@@ -20,7 +18,6 @@
 #'
 #' Hudson, R.R., Slatkin, M., and Maddison, W.P. (1992). Estimation of levels of
 #' gene flow from DNA sequence data. Genetics 132, 583-589.
-
 #'
 #' @export
 #'
@@ -82,21 +79,17 @@ fst.hudson <-function(X, idx.p1, idx.p2){
   return(fst)
 }
 
-#' Calculate the fixation index (Fst) for all SNPs between two groups of
-#' individuals from Single-nucleotide polymorphism (SNP)
+#' Fixation index (Fst) for each SNP between two groups
 #'
-#' @description Fixation index (Fst) calculation was implemented using Hudson
-#' method as in Bhatia (2013) and Hudson (1992).
+#' @description Computes Fst for every SNP between two groups of individuals
+#' with the Hudson method (Hudson et al. 1992; Bhatia et al. 2013).
 #'
-#' @param X A matrix contains the number 0, 1, and 2 representing SNP in
-#' additive coding. Rows represent individuals and columns represent SNP.
-#' @param idx.p1 An integer vector contains the row indices of first population
-#' in the matrix X.
-#' @param idx.p2 An integer vector contains the row indices of second population
-#' in the matrix X.
+#' @param X A matrix of SNPs in additive coding (0, 1, 2), with individuals in
+#' rows and SNPs in columns.
+#' @param idx.p1 Row indices of the individuals in the first group.
+#' @param idx.p2 Row indices of the individuals in the second group.
 #'
-#' @return The function returns a matrix of pairwise Fst values for all SNPs
-#' between 2 specified groups.
+#' @return A numeric vector with one Fst value per SNP (column of X).
 #'
 #' @references
 #' Bhatia, G., Patterson, N., Sankararaman, S., and Price, A.L. (2013).

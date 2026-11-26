@@ -1,3 +1,12 @@
+# KRIS 1.1.11
+
+* `read.bed()` no longer returns wrong genotypes when the size of the BED file does not split evenly into its internal chunks (for example 10 individuals and 6 SNPs). It now also reads individual-major BED files and stops with a message if the BED file is too short (ISSUE-008).
+* `cal.pc.linear(XXT = FALSE)` now returns the same eigenvalues and PCs as `XXT = TRUE`; before, it returned singular values instead of eigenvalues (ISSUE-008).
+* `cal.pc.linear()` and `cal.pc.projection()` work with `no.pc = 1` (ISSUE-008).
+* `xxt()` works on a matrix with one row (ISSUE-008).
+* Fixed spelling, grammar and wrong facts in the documentation: the `simsnp` and `sample_labels` help pages now give the real size of the data (103 individuals, 2,000 SNPs), `read.bed()` names the FAM file correctly, `cal.pc.projection()` documents `$id`, and the `plot3views()` examples use as many colors as there are labels (ISSUE-007).
+* Fixed typos in messages printed by `xxt()` and `write.bed()` (ISSUE-007).
+
 # KRIS 1.1.10
 
 * CITATION uses `bibentry()` and `c()` instead of the old-style `citEntry()` and `personList()` (ISSUE-001).
@@ -9,27 +18,27 @@
 
 # KRIS 1.1.9
 
-* Update README.rmd due to the pull request from fossabot, however, reject the initial request by fossabot.
+* Updated README.Rmd after the pull request from fossabot; the pull request itself was not merged.
 
 # KRIS 1.1.8
 
-* Update the manual
+* Updated the manual.
 
 # KRIS 1.1.7
 
-* Updated the reference with DOI in Description file
-* Updated Markdown files
-* extra on Gitlab,  document page pkgdown::build_site()
-* extra on Gitlab, add use_gitlab_ci()
+* Added the DOI of the reference to the DESCRIPTION file.
+* Updated Markdown files.
+* GitLab only: built the documentation site with `pkgdown::build_site()`.
+* GitLab only: added GitLab CI with `use_gitlab_ci()`.
 
 # KRIS 1.1.6
 
-* Updated the packages according to R v4.0.0
+* Updated the package for R 4.0.0.
 
 # KRIS 1.1.5
 
-* Add the function to calculate pvalue from 2 different groups using regression model and allowing to correct for covariates
-* Change the way to call function and fixed bugs for plot3views
+* Added a function to calculate p-values between 2 groups with a regression model, with optional correction for covariates.
+* Changed how `plot3views` is called and fixed bugs in it.
 
 # KRIS 1.1.4
 
@@ -37,39 +46,39 @@
 
 # KRIS 1.1.3
 
-* Fixed bugs in plot3views for mismatching color and pattern on a plot
+* Fixed mismatched colors and patterns in `plot3views`.
 
 # KRIS 1.1.2
 
-* Fixed bugs in read.bed
+* Fixed bugs in `read.bed`.
 
 # KRIS 1.1.1
 
-* Updated and added more examples in plot3view
+* Updated and added examples in `plot3views`.
 
 # KRIS 1.1.0
 
 * Added the function ```cal.pc.projection``` 
-* Moved ```replace.missing``` to for_parallel.R from principal.component.R
+* Moved ```replace.missing``` from principal.component.R to for_parallel.R
 * Fixed bugs in test_plot3views.R
 
 # KRIS 1.0.4
-* Changed URL in the CITATION file from Gitlab to CRAN
-* Changed email in the DESCRIPTION file from Gmail to Official email
-* Fixed misspelling in a manual of data
+* Changed the URL in the CITATION file from GitLab to CRAN.
+* Changed the email in the DESCRIPTION file from Gmail to the official email.
+* Fixed a misspelling in the data manual.
 
 # KRIS 1.0.3
 
 * Updated URLs and added details of package in the DESCRIPTION file
-* Updated manual of all functions according from CRAN's comments
+* Updated the manual of all functions following CRAN's comments.
 
 # KRIS 1.0.2
 
-* Fixed the help file for ```read.bed```, ```read.bed```, ```fst.each.snp.hudson``` and  ```fst.hudson```.
+* Fixed the help file for ```read.bed```, ```write.bed```, ```fst.each.snp.hudson``` and ```fst.hudson```.
 
 # KRIS 1.0.1
 
-* Fixed the help file for ```cal.pc.linear``` and  ```rubikclust```.
+* Fixed the help file for ```cal.pc.linear``` and ```rubikclust```.
 
 # KRIS 1.0.0
 
@@ -84,12 +93,12 @@ between two groups.
 * ```read.bed``` Read the binary PLINK format (BED, BIM, and FAM)
 * ```rubikclust``` A function for unsupervised clustering to detect rough 
 structures and outliers.
-* ```write.bed``` Write an list of SNP object to the binary PLINK format (BED, 
+* ```write.bed``` Write a list of SNP objects to the binary PLINK format (BED, 
 BIM, and FAM)
-* ```xxt``` A function for calculating matrix multipication between a matrix and 
+* ```xxt``` A function for calculating matrix multiplication between a matrix and 
 its transpose for large data.
 
-## Initial R data 
+## Initial R data
 
 * ```simsnp``` Synthetic dataset containing single nucleotide polymorphisms 
 (SNP)
@@ -105,7 +114,7 @@ dataset simsnp.
 
 ## Updates
 
-From the initial idea, some functions were changed their names:
+Some functions were renamed from the initial version:
 
 * The name of function ```cal.PC.linear``` was changed to ```cal.pc.linear```.
 * The name of function ```plot.3views``` was changed to ```plot3views```.

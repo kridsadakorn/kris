@@ -1,30 +1,24 @@
-#' Calculate linear principal component analysis (PCA) from numeric data and
-#' Single-nucleotide polymorphism (SNP) dataset
+#' Linear principal component analysis (PCA)
 #'
-#' @description Available for two types of data; numeric data and
-#' Single-nucleotide polymorphism (SNP) dataset in additive coding (0, 1, and 2).
+#' @description Computes principal components (PCs) from a numeric matrix or
+#' from SNP data in additive coding (0, 1, 2). Missing values are replaced by
+#' the column median before the analysis.
 #'
-#' @param X A data matrix which rows represent samples and columns represent
-#' features.
-#' @param PCscore To specify whether scaled PCs will be calculated or not. If
-#' FALSE, eigenvectors are returned instead. Default = TRUE.
-#' @param no.pc A number of PCs to be calculated. If no.pc is set, PCs are
-#' patially calculated. Otherwise all PCs are obtained after calculation.
-#' Default = NA.
-#' @param data.type To specify a type of data matrix X. It can be set to
-#' "linear" and "snp". Default = "linear".
-#' @param XXT To specify how pricipal components (PCs) are calculated. If TRUE,
-#' PCs are calculated from X.t(X), otherwise X is used directly. XXT is useful
-#' option especially an input matrix X contains many columns. Enabling this
-#' option, it helps to reduce computation complexity. Regardless the option XXT
-#' is enable or not, optained PCs are the same. Default = TRUE.
+#' @param X A numeric matrix with samples in rows and features in columns.
+#' @param PCscore If TRUE (default), return PC scores. If FALSE, return the
+#' eigenvectors.
+#' @param no.pc Number of PCs to compute. If NA (default), all PCs are
+#' computed.
+#' @param data.type Type of data in X: "linear" (default) for numeric data or
+#' "snp" for SNPs in additive coding. It sets how each column is scaled.
+#' @param XXT If TRUE (default), compute the PCs from \code{X \%*\% t(X)}; if
+#' FALSE, from X directly. Both give the same PCs, but TRUE is faster when X
+#' has many columns.
 #'
-#' @return The returned value is a list with 2 objects, \code{$PC},
-#' \code{$evalue}:
+#' @return A list with:
 #' \itemize{
-#' \item \code{$PC} is a PC matrix which rows represent samples and columns
-#' represent PCs.
-#' \item \code{$evalue} is a vector of eigen values.
+#' \item \code{$PC}: a matrix of PCs, with samples in rows and PCs in columns.
+#' \item \code{$evalue}: a vector of eigenvalues.
 #' }
 #'
 #' @export
@@ -116,14 +110,15 @@ cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
     PCs = UDV$u
   }else{
     UDV = svds(A, k=no.pc)
-    eigen.value = UDV$d
+    # Singular values of A are the square roots of the eigenvalues of A.t(A)
+    eigen.value = UDV$d^2
     PCs = UDV$u
   }
 
 
   if (PCscore == TRUE){
     #Calculate the PCscore and the scaled-up PCs
-    B.T=diag(1/sqrt(eigen.value)) %*% t(PCs) %*% A
+    B.T=diag(1/sqrt(eigen.value), nrow=length(eigen.value)) %*% t(PCs) %*% A
     PCs=A %*% t(B.T)
   }
 
@@ -131,37 +126,32 @@ cal.pc.linear <- function(X, PCscore = TRUE, no.pc = NA, data.type = "linear",
 }
 
 
-#' Calculate linear principal component analysis (PCA) with a projection method
-#' for Single-nucleotide polymorphism (SNP) dataset.
+#' PCA of controls with cases projected onto it
 #'
-#' In order to perform the projection method, disease status for all individuals
-#' are required. First, PCA is performed only in control group, then project
-#' the scores from control group into case group.
+#' @description Computes principal components (PCs) from the control group
+#' only, then projects the case group onto those PCs. The disease status of
+#' every individual is required. Missing values are replaced by the column
+#' median before the analysis.
 #'
-#' @param X A data matrix which rows represent samples and columns represent
-#' features.
-#' @param status A vector of numbers that contains disease status for all
-#' individuals. For control group, the status is "1", and "2" for case group.
-#' Individuals with unknown status (other numbers) are ignored and excluded from
+#' @param X A numeric matrix with samples in rows and features in columns.
+#' @param status A numeric vector with the disease status of each individual:
+#' 1 for control, 2 for case. Individuals with any other value are left out of
 #' the result.
-#' @param individual_id A vector of charactors that contains individuals IDs
-#' @param labels A vector of charactors that contains labels for all lindividuals
-#' @param no.pc A number of PCs to be calculated. If no.pc is set, PCs are
-#' patially calculated. Otherwise all PCs are obtained after calculation.
-#' Default = NA.
-#' @param data.type To specify a type of data matrix X. It can be set to
-#' "linear" and "snp". Default = "linear".
+#' @param individual_id Optional character vector of individual IDs.
+#' @param labels Optional character vector of labels, such as population
+#' names.
+#' @param no.pc Number of PCs to compute. If NA (default), all PCs are
+#' computed.
+#' @param data.type Type of data in X: "linear" (default) or "snp".
 #'
-#' @return The returned value is a list with 4 objects, \code{$PC},
-#' \code{$id}, \code{$label},and \code{$status}. Individuals with unknown status
-#' are excluded.
+#' @return A list in which controls come first, then cases:
 #' \itemize{
-#' \item \code{$PC} is a PC matrix which rows represent samples and columns
-#' represent PCs.
-#' \item \code{$individual_id} is a vector of charactors that contains individuals IDs.
-#' \item \code{$label} is a vector of charactors that contains labels for all lindividuals.
-#' \item \code{$status} is a vector of numbers that contains disease status for all.
-#' individuals.
+#' \item \code{$PC}: a matrix of PCs, with individuals in rows and PCs in
+#' columns.
+#' \item \code{$id}: the individual IDs, or NULL if \code{individual_id} was
+#' not given.
+#' \item \code{$label}: the labels, or NULL if \code{labels} was not given.
+#' \item \code{$status}: "control" or "case" for each individual.
 #' }
 #'
 #' @export
@@ -254,7 +244,7 @@ cal.pc.projection <- function(X, status, individual_id = NULL, labels = NULL,
   evv = eigs_sym(AA, k=no.pc)
   eigen.value = evv$values
   PCs = evv$vectors
-  B.T=diag(1/sqrt(eigen.value)) %*% t(PCs) %*% A
+  B.T=diag(1/sqrt(eigen.value), nrow=length(eigen.value)) %*% t(PCs) %*% A
 
   PCcon=A %*% t(B.T)
 

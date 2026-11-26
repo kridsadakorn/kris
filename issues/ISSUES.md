@@ -2,7 +2,7 @@
 
 New issues go at the bottom. Number them `ISSUE-NNN`, continuing across this file and `RESOLVED.md`. When fixed, move the entry to the top of `RESOLVED.md`.
 
-Next free number: **ISSUE-007**
+Next free number: **ISSUE-009**
 
 ## Template
 

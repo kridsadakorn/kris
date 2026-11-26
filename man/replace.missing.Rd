@@ -2,22 +2,20 @@
 % Please edit documentation in R/for_parallel.R
 \name{replace.missing}
 \alias{replace.missing}
-\title{(Internal) Replace missing values with other values,internally used for
-parallelization}
+\title{(Internal) Replace missing values}
 \usage{
 replace.missing(X, missing = NA, rep)
 }
 \arguments{
-\item{X}{An input vector}
+\item{X}{A vector.}
 
-\item{missing}{A charactors representing a missing value}
+\item{missing}{The value that marks a missing entry. Default NA.}
 
-\item{rep}{A vector of new values to replace missing values}
+\item{rep}{A vector of replacement values, the same length as X.}
 }
 \value{
-A vector with replaced values
+X with its missing entries replaced by the matching values of rep.
 }
 \description{
-(Internal) Replace missing values with other values,internally used for
-parallelization
+Used internally by the PCA functions.
 }

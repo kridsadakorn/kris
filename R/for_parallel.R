@@ -1,11 +1,12 @@
-#' (Internal) Replace missing values with other values,internally used for
-#' parallelization
+#' (Internal) Replace missing values
 #'
-#' @param X An input vector
-#' @param missing A charactors representing a missing value
-#' @param rep A vector of new values to replace missing values
+#' Used internally by the PCA functions.
 #'
-#' @return A vector with replaced values
+#' @param X A vector.
+#' @param missing The value that marks a missing entry. Default NA.
+#' @param rep A vector of replacement values, the same length as X.
+#'
+#' @return X with its missing entries replaced by the matching values of rep.
 #'
 replace.missing <- function(X,missing=NA,rep){
   if (is.na(missing)){

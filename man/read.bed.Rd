@@ -2,38 +2,40 @@
 % Please edit documentation in R/plinkformat.R
 \name{read.bed}
 \alias{read.bed}
-\title{Read the binary PLINK format (BED, BIM, and FAM)}
+\title{Read binary PLINK files (BED, BIM and FAM)}
 \usage{
 read.bed(bed, bim, fam, only.snp = FALSE)
 }
 \arguments{
-\item{bed}{A path of BED file}
+\item{bed}{Path to the BED file.}
 
-\item{bim}{A path of BIM file}
+\item{bim}{Path to the BIM file.}
 
-\item{fam}{A path of FAM file}
+\item{fam}{Path to the FAM file.}
 
-\item{only.snp}{If TRUE, the function to read only SNP matrix, otherwise all
-files are loaded. The default value is FALSE.}
+\item{only.snp}{If TRUE, return only the SNP matrix. Default FALSE.}
 }
 \value{
-The list containing the matrices of \code{$snp}, \code{$snp.info},
-and \code{$ind.info}.
+A list with:
 \itemize{
-\item \code{$snp} is a SNP matrix from BED file.
-\item \code{$snp.info} is a data.frame of SNP information from BIM file.
-\item \code{$ind.info} is a data.frame of individual information from FAM file.
+\item \code{$snp}: a matrix of SNPs in additive coding (0, 1, 2), with
+individuals in rows and SNPs in columns.
+\item \code{$snp.info}: a data.frame of SNP information from the BIM file.
+\item \code{$ind.info}: a data.frame of individual information from the FAM
+file.
 }
+If \code{only.snp = TRUE}, the list holds only \code{$snp}. If a file is
+missing or the BED file is not valid, the function prints a message and
+returns NA.
 }
 \description{
-Require the complete set of 3 files in the binary
-PLINK format. It includes BED file, BIM file and BAM file. For more
-information about the binary PLINK format, please check in the manual of
-PLINK.
+Reads a SNP dataset stored in the binary PLINK format. All
+three files are needed: BED (genotypes), BIM (SNP information) and FAM
+(individual information).
 }
 \details{
-For more details about the binary PLINK format, please check
-\url{https://www.cog-genomics.org/plink/1.9/formats#bed}
+The file format is described at
+\url{https://www.cog-genomics.org/plink/1.9/formats#bed}.
 }
 \examples{
 

@@ -1,21 +1,23 @@
-#' Calculate matrix multipication between a matrix and its
-#' transpose for large data.
+#' Multiply a large matrix by its transpose
 #'
-#' @description Calculate matrix multiplication using "divide and
-#' conquer technique", which accelerates the computation to be faster.
+#' @description Computes \code{X \%*\% t(X)} by splitting the columns of X into
+#' blocks of \code{window.size} columns and adding up the products of the
+#' blocks. This "divide and conquer" approach speeds up the computation for
+#' matrices with many columns.
 #'
-#' @param X An input matrix to be processed.
-#' @param window.size The window size of matrices to be devided. The default
-#' value is 5.
+#' @param X A numeric matrix.
+#' @param window.size Number of columns in each block. Must be a positive
+#' integer no larger than \code{ncol(X)}. Default 5.
 #'
-#' @return The multiplication matrix of \code{X.t(X)}.
+#' @return The matrix \code{X \%*\% t(X)}. If the input is invalid, the
+#' function prints a message and returns NULL.
 #'
 #' @export
 #'
 #' @examples
 #'
 #'
-#' #Use the example files embedded in the package.
+#' #Create a random matrix
 #' X <-matrix(runif(100), ncol=20)
 #' R1  <- xxt(X)
 #'
@@ -33,7 +35,7 @@ xxt <- function(X, window.size = 5){
   n.col = dim(X)[2]
   window.size = as.integer(window.size)
   if (window.size < 1){
-    cat(paste0("In matrices.split.by.col(), window.size must be possitive integer\n"))
+    cat(paste0("In matrices.split.by.col(), window.size must be a positive integer\n"))
     return(NULL)
   }
   if (is.null(n.col)){
@@ -41,17 +43,17 @@ xxt <- function(X, window.size = 5){
     return(NULL)
   }
   if (n.col < window.size){
-    cat(paste0("In matrices.split.by.col(), n.col is than window.size\n"))
+    cat(paste0("In matrices.split.by.col(), n.col is less than window.size\n"))
     return(NULL)
   }
 
   no.split = n.col %/% window.size
 
   split.matrices = lapply(1:no.split, function(col){
-    X[,((col-1)*window.size+1):(col*window.size)]})
+    X[,((col-1)*window.size+1):(col*window.size), drop=FALSE]})
 
   if ((no.split * window.size) < n.col){
-    split.matrices[[length(split.matrices)+1]] = as.matrix(X[,(no.split*window.size+1):n.col])
+    split.matrices[[length(split.matrices)+1]] = X[,(no.split*window.size+1):n.col, drop=FALSE]
   }
 
   #Can be parallel

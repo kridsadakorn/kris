@@ -3,32 +3,29 @@
 \docType{data}
 \name{simsnp}
 \alias{simsnp}
-\title{Synthetic dataset containing single nucleotide polymorphisms (SNP)}
+\title{Simulated SNP dataset}
 \format{
-A list with 3 objects
+A list with 3 elements: \code{snp}, \code{snp.info} and
+\code{ind.info}.
 }
 \usage{
 data(example_SNP)
 }
 \description{
-The simsnp is the simulated dataset which consists of 3,000 independent SNPs
-and 753 individuals belonging to one of three populations (250 individuals
-each) and 3 outlying individuals. The pairwise genetic distance between
-populations was set to Fst=0.01 as in Balding (1995).
+2,000 independent SNPs for 103 simulated individuals: two populations of 50
+individuals each, plus 3 outliers. The genetic distance between the
+populations was set to Fst = 0.01, as in Balding and Nichols (1995).
 }
 \details{
 \describe{
-\item{ind.info}{A character matrix of 753 rows and 6 columns representing
-individuals and individual information respectively. The columns of
-ind.info represents sample_ID, family_ID, father_ID, mother_ID, gender,
-and phenotype respectively.}
-\item{snp.info}{A character matrix of 3,000 rows and 6 columns representing
-SNPs and SNP information respectively. The columns of snp.info represents
-SNP_CHR (chromosome), SNP_ID, centimorgan, position, allele1, and allele2
-respectively.}
-\item{snp}{A numeric matrix of 753 rows and 3,000 columns representing
-individuals and SNPs respectively. The matrix snp contains the number 0, 1,
-and 2 representing SNP in additive coding.}
+\item{snp}{A numeric matrix with 103 rows (individuals) and 2,000 columns
+(SNPs), in additive coding (0, 1, 2).}
+\item{snp.info}{A data.frame with one row per SNP and the columns chr
+(chromosome), ID (SNP ID), GD (genetic distance), position, allele1 and
+allele2.}
+\item{ind.info}{A data.frame with one row per individual and the columns
+FamID (family ID), IndID (individual ID), PatID (father ID), MatID
+(mother ID), sex and phenotype.}
 }
 }
 \references{

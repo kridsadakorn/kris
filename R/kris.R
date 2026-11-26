@@ -1,33 +1,31 @@
-#' Keen and Reliable Interface Subroutines for bioinformatic analysis
+#' KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis
 #'
-#' Provides useful functions which are needed for bioinformatic analysis such as
-#' calculating linear principal components from numeric data and
-#' Single-nucleotide polymorphism (SNP) dataset, calculating fixation index
-#' (Fst) using Hudson method, creating scatter plots in 3 views, handling with
-#' PLINK binary file format, detecting rough structures and outliers using
-#' unsupervised clustering, and calculating matrix multiplication in the faster
-#' way for big data.
+#' Tools for common steps in the bioinformatic analysis of numeric and SNP
+#' data.
 #'
-#' The R package \pkg{KRIS} requires the package \pkg{rARPACK}.
-#'
-#' Here is the list of functions in the R package \pkg{KRIS}:
+#' Functions:
 #' \itemize{
-#' \item \code{\link{cal.pc.linear}}
-#' \item \code{\link{cal.pc.projection}}
-#' \item \code{\link{fst.each.snp.hudson}}
-#' \item \code{\link{fst.hudson}}
-#' \item \code{\link{plot3views}}
-#' \item \code{\link{read.bed}}
-#' \item \code{\link{rubikclust}}
-#' \item \code{\link{write.bed}}
-#' \item \code{\link{xxt}}
+#' \item \code{\link{cal.pc.linear}}: linear principal component analysis
+#' (PCA).
+#' \item \code{\link{cal.pc.projection}}: PCA of controls, with cases projected
+#' onto it.
+#' \item \code{\link{fst.hudson}}: average fixation index (Fst) between two
+#' groups.
+#' \item \code{\link{fst.each.snp.hudson}}: Fst for each SNP between two
+#' groups.
+#' \item \code{\link{plot3views}}: scatter plots of 3 variables in three views.
+#' \item \code{\link{read.bed}} and \code{\link{write.bed}}: read and write
+#' binary PLINK files.
+#' \item \code{\link{rubikclust}}: unsupervised clustering to find rough
+#' structure and outliers.
+#' \item \code{\link{xxt}}: \code{X \%*\% t(X)} for large matrices, computed in
+#' blocks.
 #' }
 #'
-#' Moreover, here is the list of example datasets in the R package \pkg{KRIS}:
-#' \itemize{
-#' \item \code{\link{simsnp}}
-#' \item \code{\link{sample_labels}}
-#' }
+#' Example data: \code{\link{simsnp}} and \code{\link{sample_labels}}, loaded
+#' with \code{data(example_SNP)}.
+#'
+#' KRIS uses \pkg{rARPACK} for the eigen decomposition.
 #' @keywords internal
 #' @import rARPACK
 "_PACKAGE"

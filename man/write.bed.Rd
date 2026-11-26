@@ -2,34 +2,34 @@
 % Please edit documentation in R/plinkformat.R
 \name{write.bed}
 \alias{write.bed}
-\title{Write a list of SNP object to the binary PLINK format (BED, BIM, and FAM)}
+\title{Write a SNP object to binary PLINK files (BED, BIM and FAM)}
 \usage{
 write.bed(object, file)
 }
 \arguments{
-\item{object}{An object of SNP is a list consisting of 3 matrices, see the
-\emph{Details} section for more details.}
+\item{object}{A list with \code{$snp}, \code{$snp.info} and
+\code{$ind.info}; see Details.}
 
-\item{file}{A prefix of output files for BED, BIM and FAM to be saved.}
+\item{file}{Output path without extension. The function adds .bed, .bim and
+.fam. Existing files are overwritten.}
 }
 \value{
-\code{NULL}.
+\code{NULL}, invisibly.
 }
 \description{
-Write a SNP object to the files in the binary
-PLINK format. For more information about the binary PLINK format, please
-check in the manual of PLINK.
+Saves a SNP object, such as one returned by
+\code{\link{read.bed}}, as BED, BIM and FAM files.
 }
 \details{
-The \code{object} should contain:
+\code{object} must contain:
 \itemize{
-\item \code{$snp} is a SNP matrix from BED file.
-\item \code{$snp.info} is a data.frame of SNP information from BIM file.
-\item \code{$ind.info} is a data.frame of individual information from FAM file.
+\item \code{$snp}: a matrix of SNPs in additive coding (0, 1, 2), with
+individuals in rows and SNPs in columns.
+\item \code{$snp.info}: a data.frame with the 6 columns of a BIM file.
+\item \code{$ind.info}: a data.frame with the 6 columns of a FAM file.
 }
-
-For more details about the binary PLINK format, please check
-\url{https://www.cog-genomics.org/plink/1.9/formats#bed}
+The file format is described at
+\url{https://www.cog-genomics.org/plink/1.9/formats#bed}.
 }
 \examples{
 

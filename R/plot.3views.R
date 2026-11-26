@@ -1,28 +1,29 @@
-#' Create scatter plots in three views.
+#' Scatter plots in three views
 #'
-#' @description Visualize data in X-Y plane, X-Z plane, and Y-Z
-#' plane. The input object (matrix or data.frame) must contain at least 3
-#' columns.
+#' @description Draws the first three columns of X as three scatter plots
+#' (PC1 vs PC2, PC3 vs PC2 and PC1 vs PC3) plus a legend, in a 2 x 2 layout.
 #'
-#' @param X A matrix or a data.frame that contains at least 3 columns of numeric
-#' data. If there are more than 3 columns in X, only the first 3 columns will be
-#' used.
-#' @param labels A vector containing row labels of X for display. All vector
-#' elements should be of type "character" (as.character). The length of
-#' vector equals the number of rows in X.
-#' @param only.row A vector that contains subset of row numbers that are
-#' selected to be plotted. Default = NA.
-#' @param plot.legend A vector of characters representing legends, also see the note below. Default = NA.
-#' @param plot.pattern A vector of characters or integer representing patterns, also see the note below. Default = NA.
-#' @param plot.color A vector of characters or integer representing  colors, also see the note below. Default = NA.
+#' @param X A matrix or data.frame with at least 3 numeric columns. Only the
+#' first 3 columns are used.
+#' @param labels A character vector with one label per row of X. Points with
+#' the same label share a color and symbol.
+#' @param only.row Optional vector of row numbers to plot. If NA (default),
+#' all rows are plotted.
+#' @param plot.legend Optional character vector of the labels to style; see
+#' Details.
+#' @param plot.pattern Optional vector of point symbols (characters or
+#' integers, as in \code{pch}), one per entry of \code{plot.legend}.
+#' @param plot.color Optional vector of colors (names, hex codes or integers),
+#' one per entry of \code{plot.legend}.
 #'
-#' @details Note that the vectors of plot.legend, plot.pattern, and plot.color
-#' need to be defined as the same length. All of these vectors need to be given
-#' to the function otherwise the default colors and patterns will be used.
-#' The vectors need to be set properly, see the section "Examples" for more details.
+#' @details To choose your own colors and symbols, give \code{plot.legend},
+#' \code{plot.pattern} and \code{plot.color} together, all of the same length.
+#' If any of them is missing or the lengths differ, the default colors and
+#' symbols are used. See the examples.
 #'
-#' From version 1.1.5 onward, the parameter 'col.pat.table' is removed out from the
-#' function.
+#' The argument \code{col.pat.table} was removed in version 1.1.5.
+#'
+#' @return \code{NULL}, invisibly. The function is called for its plot.
 #'
 #' @export
 #'
@@ -39,15 +40,15 @@
 #'
 #' #To change colors and patterns using symbols
 #' all.labels <- unique(sample_labels)
-#' my.colors <- c('pink', 'yellow', 'cyan', 'green')
-#' my.patterns <- c(0,1,2,3)
+#' my.colors <- c('pink', 'cyan', 'green')
+#' my.patterns <- c(0,1,2)
 #' plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
 #' plot.pattern = my.patterns, plot.color = my.colors)
 #'
 #' #To change patterns using characters
-#' my.patterns <- c('o', 'x', '&', '#')
+#' my.patterns <- c('o', 'x', '#')
 #' #To change colors using Hex code
-#' my.colors <- c('#E74C3C', '#8E44AD', '#2ECC71', '#E67E22')
+#' my.colors <- c('#E74C3C', '#8E44AD', '#2ECC71')
 #' plot3views(PCs$PC, labels = sample_labels, plot.legend = all.labels,
 #' plot.pattern = my.patterns, plot.color = my.colors)
 

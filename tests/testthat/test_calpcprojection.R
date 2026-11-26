@@ -4,6 +4,7 @@ test_that("Projected PCA for SNPs",{
 
   data(example_SNP)
 
+  set.seed(1)
   ind_status <- sample(c(1,2), size = length(sample_labels), replace = T)
 
   PCs <- cal.pc.projection(simsnp$snp, status = ind_status,

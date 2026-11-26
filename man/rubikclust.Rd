@@ -2,31 +2,28 @@
 % Please edit documentation in R/rubikClust.R
 \name{rubikclust}
 \alias{rubikclust}
-\title{Unsupervised clustering to detect rough structures and outliers.}
+\title{Unsupervised clustering to detect rough structure and outliers}
 \usage{
 rubikclust(X, min.space = 0.4, rotation = TRUE)
 }
 \arguments{
-\item{X}{A data matrix for which rows represent samples and the 3 columns
-represent features. Missingness is not allowed.}
+\item{X}{A numeric matrix with samples in rows and at least 3 columns. Only
+the first 3 columns are used. Missing values are not allowed.}
 
-\item{min.space}{A value to specify a minimum space between 2 consecutive
-projected values. Default = 0.4.}
+\item{min.space}{Smallest gap, relative to the range of an axis, that
+separates two clusters. Default 0.4.}
 
-\item{rotation}{To specify if rotation is enabled or not. Default = TRUE.}
+\item{rotation}{If TRUE (default), rotate the axes before clustering.}
 }
 \value{
-The returned value is a vector of numbers representing cluster
-memberships.
+A numeric vector with the cluster number of each sample.
 }
 \description{
-Handle and operate on Nx3 matrix, where N is the number of
-samples and data are collected on 3 variables.
-}
-\details{
-The function rubikClust is able to take up to 3 variables
-(N x 3 matrix). In case, a matrix contains more than 3 columns, only the
-first three columns are used; the other columns are ignored.
+Clusters samples on 3 variables, such as the first three
+principal components. The data are first rotated in each pair of axes to
+the angle that best separates the points. Clusters are then split wherever
+the gap between neighbouring values on an axis, relative to the range of
+that axis, is larger than \code{min.space}.
 }
 \examples{
 #Load simulated dataset

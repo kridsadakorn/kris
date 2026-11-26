@@ -1,26 +1,28 @@
-#' Read the binary PLINK format (BED, BIM, and FAM)
+#' Read binary PLINK files (BED, BIM and FAM)
 #'
-#' @description Require the complete set of 3 files in the binary
-#' PLINK format. It includes BED file, BIM file and BAM file. For more
-#' information about the binary PLINK format, please check in the manual of
-#' PLINK.
+#' @description Reads a SNP dataset stored in the binary PLINK format. All
+#' three files are needed: BED (genotypes), BIM (SNP information) and FAM
+#' (individual information).
 #'
-#' @param bed A path of BED file
-#' @param bim A path of BIM file
-#' @param fam A path of FAM file
-#' @param only.snp If TRUE, the function to read only SNP matrix, otherwise all
-#' files are loaded. The default value is FALSE.
+#' @param bed Path to the BED file.
+#' @param bim Path to the BIM file.
+#' @param fam Path to the FAM file.
+#' @param only.snp If TRUE, return only the SNP matrix. Default FALSE.
 #'
-#' @return The list containing the matrices of \code{$snp}, \code{$snp.info},
-#' and \code{$ind.info}.
+#' @return A list with:
 #' \itemize{
-#' \item \code{$snp} is a SNP matrix from BED file.
-#' \item \code{$snp.info} is a data.frame of SNP information from BIM file.
-#' \item \code{$ind.info} is a data.frame of individual information from FAM file.
+#' \item \code{$snp}: a matrix of SNPs in additive coding (0, 1, 2), with
+#' individuals in rows and SNPs in columns.
+#' \item \code{$snp.info}: a data.frame of SNP information from the BIM file.
+#' \item \code{$ind.info}: a data.frame of individual information from the FAM
+#' file.
 #' }
+#' If \code{only.snp = TRUE}, the list holds only \code{$snp}. If a file is
+#' missing or the BED file is not valid, the function prints a message and
+#' returns NA.
 #'
-#' @details For more details about the binary PLINK format, please check
-#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}
+#' @details The file format is described at
+#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}.
 #'
 #' @export
 #' @md
@@ -89,43 +91,49 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
     cat(paste0("Error: BED file is not in a correct format: ",bed,"\n"))
     return(ret)
   }
-  no.byte.to.read = NA
-  no.loop = NA
-  if (buff[3] == '01'){
+  snp.major = (buff[3] == '01')
+  if (snp.major){
+    # Each SNP is a block of ceiling(no.ind/4) bytes
     no.byte.to.read = ceiling(no.ind/4.0)
     no.loop = no.snp
+    no.keep = no.ind
   }else{
+    # Individual-major: each individual is a block of ceiling(no.snp/4) bytes
     no.byte.to.read = ceiling(no.snp/4.0)
     no.loop = no.ind
+    no.keep = no.snp
   }
 
   snp = readBin(fh, what="raw",n=(no.byte.to.read*no.loop))
   close(fh)
-
-  length.snp = length(snp)
-  no.part=10
-  sub.length.snp = round(length.snp / no.part)
-
-  tmp.snp = c()
-  for (i in 1:no.part){
-    if (i != no.part){
-      idx1 = (i-1)*sub.length.snp + 1
-      idx2 = i*sub.length.snp
-      sub.snp =snp[idx1:idx2]
-    }else{
-      idx1 = (i-1)*sub.length.snp + 1
-      idx2 = length.snp
-      sub.snp =snp[idx1:idx2]
-    }
-
-    sub.snp.bits = matrix(as.integer(rawToBits(sub.snp)),ncol=2,byrow=T)
-
-    tmp.sub.snp.bits = sub.snp.bits[,1]+sub.snp.bits[,2]
-    tmp.sub.snp.bits[which((sub.snp.bits[,2]-sub.snp.bits[,1])<0)] = NA
-    tmp.snp = c(tmp.snp,tmp.sub.snp.bits)
+  if (length(snp) != no.byte.to.read*no.loop){
+    cat(paste0("Error: BED file is shorter than expected from the BIM and FAM files: ",bed,"\n"))
+    return(ret)
   }
 
-  snp = matrix(tmp.snp,ncol=no.snp,byrow=F)[1:no.ind,]
+  # Decode whole blocks at a time, so padding bits at the end of each block
+  # are dropped in the right place. Two bits per genotype, low bit first:
+  # 00 = 0, 10 = 1 (heterozygous), 11 = 2, 01 = missing.
+  decode.blocks <- function(raw.block, n.block){
+    bits = matrix(as.integer(rawToBits(raw.block)),ncol=2,byrow=TRUE)
+    geno = bits[,1]+bits[,2]
+    geno[which((bits[,2]-bits[,1])<0)] = NA
+    matrix(geno, ncol=n.block)[1:no.keep, , drop=FALSE]
+  }
+
+  block.per.chunk = max(1, ceiling(no.loop / 10))
+  res = vector("list", ceiling(no.loop / block.per.chunk))
+  for (i in seq_along(res)){
+    b1 = (i-1)*block.per.chunk + 1
+    b2 = min(i*block.per.chunk, no.loop)
+    idx = ((b1-1)*no.byte.to.read + 1):(b2*no.byte.to.read)
+    res[[i]] = decode.blocks(snp[idx], b2-b1+1)
+  }
+  snp = do.call(cbind, res)
+
+  if (!snp.major){
+    snp = t(snp)
+  }
 
   if (only.snp == FALSE){
     return(list("snp"=snp,"snp.info"=snp.info,"ind.info"=ind.info))
@@ -135,27 +143,27 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
 }
 
 
-#' Write a list of SNP object to the binary PLINK format (BED, BIM, and FAM)
+#' Write a SNP object to binary PLINK files (BED, BIM and FAM)
 #'
-#' @description Write a SNP object to the files in the binary
-#' PLINK format. For more information about the binary PLINK format, please
-#' check in the manual of PLINK.
+#' @description Saves a SNP object, such as one returned by
+#' \code{\link{read.bed}}, as BED, BIM and FAM files.
 #'
-#' @param object An object of SNP is a list consisting of 3 matrices, see the
-#' \emph{Details} section for more details.
-#' @param file A prefix of output files for BED, BIM and FAM to be saved.
+#' @param object A list with \code{$snp}, \code{$snp.info} and
+#' \code{$ind.info}; see Details.
+#' @param file Output path without extension. The function adds .bed, .bim and
+#' .fam. Existing files are overwritten.
 #'
-#' @return \code{NULL}.
+#' @return \code{NULL}, invisibly.
 #'
-#' @details The \code{object} should contain:
+#' @details \code{object} must contain:
 #' \itemize{
-#' \item \code{$snp} is a SNP matrix from BED file.
-#' \item \code{$snp.info} is a data.frame of SNP information from BIM file.
-#' \item \code{$ind.info} is a data.frame of individual information from FAM file.
+#' \item \code{$snp}: a matrix of SNPs in additive coding (0, 1, 2), with
+#' individuals in rows and SNPs in columns.
+#' \item \code{$snp.info}: a data.frame with the 6 columns of a BIM file.
+#' \item \code{$ind.info}: a data.frame with the 6 columns of a FAM file.
 #' }
-#'
-#' For more details about the binary PLINK format, please check
-#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}
+#' The file format is described at
+#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}.
 #'
 #' @export
 #'
@@ -179,13 +187,13 @@ write.bed <- function(object, file){
   bim = paste0(file,'.bim')
   fam = paste0(file,'.fam')
   if (file.exists(bed)){
-    cat(paste0("Overwrite the existed bed file\n"))
+    cat(paste0("Overwriting the existing bed file\n"))
   }
   if (file.exists(bim)){
-    cat(paste0("Overwrite the existed bim file\n"))
+    cat(paste0("Overwriting the existing bim file\n"))
   }
   if (file.exists(fam)){
-    cat(paste0("Overwrite the existed fam file\n"))
+    cat(paste0("Overwriting the existing fam file\n"))
   }
 
   #Write BIM file

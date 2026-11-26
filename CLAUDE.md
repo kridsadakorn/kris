@@ -10,7 +10,7 @@ Goal: keep it passing `R CMD check --as-cran` on every platform and publish upda
 - CRAN has seen 1.0.3, 1.1.1, 1.1.6. GitHub reached 1.1.9 without a CRAN release.
 - Reverse dependency: **FILEST** imports KRIS. Check it before changing any export.
 - Maintainer email: `kridsadakorn@biostatgen.org`. CRAN sends every notice there, so it must be an inbox the maintainer reads.
-- Local R is 4.1.3 (old). Current R release on 2026-11-26: 4.6.2. No `gh` CLI, no pandoc, no `spelling` package.
+- Local R is 4.1.3 (old). Current R release on 2026-11-26: 4.6.2. `gh` is at `/opt/homebrew/bin/gh` (not on PATH). No pandoc, no `spelling` package.
 - CRAN submission winter break: 2026-12-22 to 2027-01-07.
 
 ## Layout
@@ -90,7 +90,7 @@ Every resolved issue bumps `Version:` in `DESCRIPTION` without asking.
 
 ## Known history
 
-- Never archived as of 2026-11-26. Open CRAN finding on 1.1.6: old-style `personList()`/`citEntry()` in CITATION (r-devel Debian NOTE).
+- Never archived as of 2026-11-26. Open CRAN finding on 1.1.6: old-style `personList()`/`citEntry()` in CITATION (r-devel Debian NOTE); fixed in 1.1.10.
 - GitHub CI used `ubuntu-16.04` and `r-lib/actions@v1` until 1.1.10.
 - This checkout (`kris_github/kris`) is the only working copy. Old copies, do not use: `../../kris`, `../../kris_gitlab/kris`, `../../kris_gitlab/kris_doc` (old website repo), `../../kris_rel_backup/kris`.
 - Local branch `backup/gitlab-6b92a87` keeps an unpushed GitLab commit (LICENSE wording only). Do not push it.

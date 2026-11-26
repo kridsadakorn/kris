@@ -2,28 +2,30 @@
 % Please edit documentation in R/matrix.multiply.R
 \name{xxt}
 \alias{xxt}
-\title{Calculate matrix multipication between a matrix and its
-transpose for large data.}
+\title{Multiply a large matrix by its transpose}
 \usage{
 xxt(X, window.size = 5)
 }
 \arguments{
-\item{X}{An input matrix to be processed.}
+\item{X}{A numeric matrix.}
 
-\item{window.size}{The window size of matrices to be devided. The default
-value is 5.}
+\item{window.size}{Number of columns in each block. Must be a positive
+integer no larger than \code{ncol(X)}. Default 5.}
 }
 \value{
-The multiplication matrix of \code{X.t(X)}.
+The matrix \code{X \%*\% t(X)}. If the input is invalid, the
+function prints a message and returns NULL.
 }
 \description{
-Calculate matrix multiplication using "divide and
-conquer technique", which accelerates the computation to be faster.
+Computes \code{X \%*\% t(X)} by splitting the columns of X into
+blocks of \code{window.size} columns and adding up the products of the
+blocks. This "divide and conquer" approach speeds up the computation for
+matrices with many columns.
 }
 \examples{
 
 
-#Use the example files embedded in the package.
+#Create a random matrix
 X <-matrix(runif(100), ncol=20)
 R1  <- xxt(X)
 

@@ -2,43 +2,37 @@
 % Please edit documentation in R/principal.component.R
 \name{cal.pc.linear}
 \alias{cal.pc.linear}
-\title{Calculate linear principal component analysis (PCA) from numeric data and
-Single-nucleotide polymorphism (SNP) dataset}
+\title{Linear principal component analysis (PCA)}
 \usage{
 cal.pc.linear(X, PCscore = TRUE, no.pc = NA, data.type = "linear", XXT = TRUE)
 }
 \arguments{
-\item{X}{A data matrix which rows represent samples and columns represent
-features.}
+\item{X}{A numeric matrix with samples in rows and features in columns.}
 
-\item{PCscore}{To specify whether scaled PCs will be calculated or not. If
-FALSE, eigenvectors are returned instead. Default = TRUE.}
+\item{PCscore}{If TRUE (default), return PC scores. If FALSE, return the
+eigenvectors.}
 
-\item{no.pc}{A number of PCs to be calculated. If no.pc is set, PCs are
-patially calculated. Otherwise all PCs are obtained after calculation.
-Default = NA.}
+\item{no.pc}{Number of PCs to compute. If NA (default), all PCs are
+computed.}
 
-\item{data.type}{To specify a type of data matrix X. It can be set to
-"linear" and "snp". Default = "linear".}
+\item{data.type}{Type of data in X: "linear" (default) for numeric data or
+"snp" for SNPs in additive coding. It sets how each column is scaled.}
 
-\item{XXT}{To specify how pricipal components (PCs) are calculated. If TRUE,
-PCs are calculated from X.t(X), otherwise X is used directly. XXT is useful
-option especially an input matrix X contains many columns. Enabling this
-option, it helps to reduce computation complexity. Regardless the option XXT
-is enable or not, optained PCs are the same. Default = TRUE.}
+\item{XXT}{If TRUE (default), compute the PCs from \code{X \%*\% t(X)}; if
+FALSE, from X directly. Both give the same PCs, but TRUE is faster when X
+has many columns.}
 }
 \value{
-The returned value is a list with 2 objects, \code{$PC},
-\code{$evalue}:
+A list with:
 \itemize{
-\item \code{$PC} is a PC matrix which rows represent samples and columns
-represent PCs.
-\item \code{$evalue} is a vector of eigen values.
+\item \code{$PC}: a matrix of PCs, with samples in rows and PCs in columns.
+\item \code{$evalue}: a vector of eigenvalues.
 }
 }
 \description{
-Available for two types of data; numeric data and
-Single-nucleotide polymorphism (SNP) dataset in additive coding (0, 1, and 2).
+Computes principal components (PCs) from a numeric matrix or
+from SNP data in additive coding (0, 1, 2). Missing values are replaced by
+the column median before the analysis.
 }
 \examples{
 
