@@ -29,7 +29,7 @@ The \code{object} should contain:
 }
 
 For more details about the binary PLINK format, please check
-\url{http://zzz.bwh.harvard.edu/plink/binary.shtml}
+\url{https://www.cog-genomics.org/plink/1.9/formats#bed}
 }
 \examples{
 

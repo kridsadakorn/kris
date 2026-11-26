@@ -61,14 +61,7 @@ xxt <- function(X, window.size = 5){
     partial.mul[[i]] = split.matrices[[i]] %*% t(split.matrices[[i]])
   }
 
-  mul = NULL
-  for (i in 2:length(partial.mul)){
-    if (is.null(mul)){
-      mul = partial.mul[[1]] + partial.mul[[i]]
-    }else{
-      mul = mul + partial.mul[[i]]
-    }
-  }
+  mul = Reduce(`+`, partial.mul)
 
   return(mul)
 }

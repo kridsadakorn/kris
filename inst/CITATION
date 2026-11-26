@@ -1,26 +1,28 @@
-year <- "2018"
+year <- "2026"
 note <- sprintf("R package version %s", meta$Version)
 
-citHeader("To cite KRIS in publications use:")
-
-citEntry(entry = "Manual",
-  title        = "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis",
-  author       = personList(
+authors <- c(
   person(given = "Kridsadakorn", family = "Chaichoompu"),
   person(given = "Fentaw", family = "Abegaz"),
   person(given = "Sissades", family = "Tongsima"),
   person(given = "Philip", family = "James Shaw"),
   person(given = "Anavaj", family = "Sakuntabhai"),
   person(given = "Luisa", family = "Pereira"),
-  person(given = "Kristel", family = 'Van Steen')
-),
-  year         = year,
-  note         = note,
-  url          = "https://CRAN.R-project.org/package=KRIS",
+  person(given = "Kristel", family = "Van Steen")
+)
 
-  textVersion  =
-  paste0("Kridsadakorn Chaichoompu, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, Anavaj Sakuntabhai, Luisa Pereira, and Kristel Van Steen (",year,"). ",
-        "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis. ",
-        note,
-        ". URL: https://CRAN.R-project.org/package=KRIS")
+citHeader("To cite KRIS in publications use:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis",
+  author = authors,
+  year = year,
+  note = note,
+  url = "https://CRAN.R-project.org/package=KRIS",
+  textVersion = paste0(
+    "Kridsadakorn Chaichoompu, Fentaw Abegaz, Sissades Tongsima, Philip James Shaw, ",
+    "Anavaj Sakuntabhai, Luisa Pereira, and Kristel Van Steen (", year, "). ",
+    "KRIS: Keen and Reliable Interface Subroutines for Bioinformatic Analysis. ",
+    note, ". URL: https://CRAN.R-project.org/package=KRIS")
 )

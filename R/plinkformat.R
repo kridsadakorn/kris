@@ -20,7 +20,7 @@
 #' }
 #'
 #' @details For more details about the binary PLINK format, please check
-#' \url{http://zzz.bwh.harvard.edu/plink/binary.shtml}
+#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}
 #'
 #' @export
 #' @md
@@ -155,7 +155,7 @@ read.bed <- function(bed, bim, fam, only.snp = FALSE){
 #' }
 #'
 #' For more details about the binary PLINK format, please check
-#' \url{http://zzz.bwh.harvard.edu/plink/binary.shtml}
+#' \url{https://www.cog-genomics.org/plink/1.9/formats#bed}
 #'
 #' @export
 #'

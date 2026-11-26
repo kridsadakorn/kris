@@ -1,0 +1,14 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.Rprofile$
+^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
+^\.gitlab-ci\.yml$
+^data/\.Rapp\.history$
+^CLAUDE\.md$
+^\.claude$
+^issues$
+^cran-comments\.md$

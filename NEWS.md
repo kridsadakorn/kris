@@ -1,3 +1,12 @@
+# KRIS 1.1.10
+
+* CITATION uses `bibentry()` and `c()` instead of the old-style `citEntry()` and `personList()` (ISSUE-001).
+* Added `.Rbuildignore` so repository-only files are left out of the package (ISSUE-002).
+* Updated GitHub Actions to r-lib/actions v2 (ISSUE-003).
+* Fixed a broken PLINK link, dead README links and the DOI format (ISSUE-004).
+* `xxt()` no longer fails when `window.size` equals the number of columns (ISSUE-005).
+* `plot3views()` restores graphical parameters and accepts matrix input for `labels` (ISSUE-006).
+
 # KRIS 1.1.9
 
 * Update README.rmd due to the pull request from fossabot, however, reject the initial request by fossabot.

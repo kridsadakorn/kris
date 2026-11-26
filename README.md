@@ -8,11 +8,11 @@
 [![R-CMD-check](https://github.com/kridsadakorn/kris/workflows/R-CMD-check/badge.svg)](https://github.com/kridsadakorn/kris/actions)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/KRIS)](https://CRAN.R-project.org/package=KRIS)
-[![codecov](https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6)](https://codecov.io/gh/kridsadakorn/kris)
+[![codecov](https://codecov.io/gh/kridsadakorn/kris/branch/master/graph/badge.svg?token=QO20Q25CL6)](https://app.codecov.io/gh/kridsadakorn/kris)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![DOI](https://zenodo.org/badge/333291793.svg)](https://zenodo.org/badge/latestdoi/333291793)
 [![FOSSA
 Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkris?ref=badge_shield)
@@ -38,7 +38,7 @@ install.packages("KRIS")
 ```
 
 Alternatively, you can install the dev version of KRIS from
-[Gitlab](https://github.com/kridsadakorn/kris) with
+[GitHub](https://github.com/kridsadakorn/kris) with
 
 ``` r
 install.packages("remotes")
@@ -93,6 +93,6 @@ Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkridsadakorn%2Fkri
 ## About
 
 -   Prof. Kristel Van Steen, visit
-    <a href="http://bio3.giga.ulg.ac.be/" border=0 style="border:0; text-decoration:none; outline:none"><img width="40px" src="man/figures/bio3_logo.png" align="center" /></a><br />
+    <img width="40px" src="man/figures/bio3_logo.png" align="center" /><br />
 -   Kridsadakorn Chaichoompu, visit
     <a href="https://www.biostatgen.org/" border=0 style="border:0; text-decoration:none; outline:none"><img width="110px" src="man/figures/biostatgen_logo.png" align="center" /></a><br />

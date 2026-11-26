@@ -73,8 +73,8 @@ plot3views <- function(X,
   map.pch = c(map.pch,49:57,97:107,109:110,112:119,121:122)
   map.pch = c(map.pch,65:78,81:82,84:85,89)
 
-  if (class(plot.color) != "character") plot.color = as.character(plot.color)
-  if (class(plot.pattern) == "factor") plot.pattern = as.character(plot.pattern)
+  if (!is.character(plot.color)) plot.color = as.character(plot.color)
+  if (is.factor(plot.pattern)) plot.pattern = as.character(plot.pattern)
 
   map.pattern = c()
   for (i in 1:length(map.pch))
@@ -83,13 +83,15 @@ plot3views <- function(X,
       map.pattern = rbind(map.pattern,tmp)
     }
 
-  if (class(labels) == "data.frame"){
+  if (is.data.frame(labels)){
     labels = labels[,1]
     u.label = sort(unique(labels))
   }else{
     u.label = sort(unique(labels))
   }
 
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
   par(mfrow=c(2,2))
 
   #Top-Left
